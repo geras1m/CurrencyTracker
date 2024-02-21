@@ -1,0 +1,9 @@
+*.json
+dist
+public
+node_modules
+webpack.common.js
+webpack.dev.js
+webpack.prod.js
+__mocks__
+__tests__
