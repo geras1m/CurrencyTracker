@@ -19,6 +19,7 @@
       "@constants/*": ["src/constants/*"],
       "@assets/*": ["./src/assets/*"],
       "@utils/*": ["./src/utils/*"],
+      "@pages/*": ["./src/pages/*"],
       "@app-types/*": ["./src/types/*"]
     },
     "noFallthroughCasesInSwitch": true,
