@@ -26,7 +26,6 @@ export interface IColors {
 
 export interface IGradients {
   text: string;
-  chart: string;
   background: string;
 }
 
@@ -37,3 +36,17 @@ export interface IFontWeight {
   semibold: string;
   bold: string;
 }
+
+export interface ITheme {
+  bg: string;
+  toggle: string;
+  fontNavBar: string;
+  fontFooterText: string;
+}
+
+export enum ThemeValue {
+  light = 'light',
+  dark = 'dark',
+}
+
+export type ThemeType = 'light' | 'dark';

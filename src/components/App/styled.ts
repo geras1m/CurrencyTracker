@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   
   body{
     margin: 0;
-    // background-color: ${({ theme }) => theme.bgColor};
+    background-color: ${({ theme }) => theme.bg};
   }
 `;
 

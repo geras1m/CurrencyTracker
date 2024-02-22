@@ -1,3 +1,4 @@
+import { colors, fontSizes, fontWeight } from '@constants/theme/theme';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -6,13 +7,14 @@ export const NavList = styled.ul`
   align-items: center;
   justify-content: space-between;
   column-gap: 112px;
+  margin: 0;
 `;
 
 export const NavLinkElem = styled(NavLink)`
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: ${fontWeight.light};
+  font-size: ${fontSizes.px20};
   text-decoration: none;
-  color: black;
+  color: ${({ theme }) => theme.fontNavBar};
   transition: 0.2s ease-out;
 
   &:hover {
@@ -20,6 +22,6 @@ export const NavLinkElem = styled(NavLink)`
   }
 
   &.active {
-    color: green;
+    color: ${colors.green1};
   }
 `;
