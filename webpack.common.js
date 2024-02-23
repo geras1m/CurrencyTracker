@@ -42,6 +42,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Currency Tracker',
+      favicon: path.join(__dirname, 'src', 'assets', 'favicon', 'favicon.png'),
       template: path.join(__dirname, 'public', 'index.html'),
     }),
     new dotenv(),
