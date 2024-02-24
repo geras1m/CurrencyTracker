@@ -7,8 +7,8 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 const App = () => {
-  const themeFromStore = (localStorage.getItem('theme') as ThemeType) ?? ThemeValue.light;
-  const [theme, setTheme] = useState<ThemeType>(themeFromStore);
+  const lastUsedTheme = (localStorage.getItem('theme') as ThemeType) ?? ThemeValue.dark;
+  const [theme, setTheme] = useState<ThemeType>(lastUsedTheme);
 
   const handleToSwitchTheme = (theme: ThemeType) => {
     const themeValue = theme === ThemeValue.light ? ThemeValue.dark : ThemeValue.light;
@@ -24,7 +24,7 @@ const App = () => {
       <Header theme={theme} switchTheme={handleToSwitchTheme} />
       {/* <Poster/> */}
       <Main />
-      {theme}
+      {}
       {/* <Footer/> */}
     </ThemeProvider>
   );

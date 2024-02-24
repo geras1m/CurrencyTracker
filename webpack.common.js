@@ -1,6 +1,9 @@
 const path = require('path');
+const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const dotenv = require('dotenv-webpack');
+const { DefinePlugin } = require('webpack');
+
+dotenv.config();
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.tsx'),
@@ -34,6 +37,8 @@ module.exports = {
       '@assets': path.resolve(__dirname, 'src', 'assets'),
       '@components': path.resolve(__dirname, 'src', 'components'),
       '@constants': path.resolve(__dirname, 'src', 'constants'),
+      '@hooks': path.resolve(__dirname, 'src', 'hooks'),
+      '@services': path.resolve(__dirname, 'src', 'services'),
       '@utils': path.resolve(__dirname, 'src', 'utils'),
       '@pages': path.resolve(__dirname, 'src', 'pages'),
       '@app-types': path.resolve(__dirname, 'src', 'types'),
@@ -42,9 +47,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Currency Tracker',
-      favicon: path.join(__dirname, 'src', 'assets', 'favicon', 'favicon.png'),
+      favicon: path.join(__dirname, 'public', 'favicon.png'),
       template: path.join(__dirname, 'public', 'index.html'),
     }),
-    new dotenv(),
+    new DefinePlugin({
+      'process.env': JSON.stringify(process.env),
+    }),
   ],
 };
