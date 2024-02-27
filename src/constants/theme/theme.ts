@@ -21,17 +21,20 @@ export const fontWeight: IFontWeight = {
 
 export const colors: IColors = {
   black: '#030304',
-  black1: '#202025',
-  black2: '#474747',
+  border: '#474747',
+  darkBgCards: '#202025',
+  lightBgCards: '#cdcdd7',
   white: '#ffffff',
-  grey: '#D9D9D9',
-  grey1: '#A7B2C3',
-  grey2: '#898989',
-  green: '#16C782',
-  green1: '#00BC4F',
-  green2: '#008139',
-  red: '#EA3943',
-  orange: '#FF971D',
+  darkTitle: '#D9D9D9',
+  darkText: '#A7B2C3',
+  lightTitle: '#181818',
+  lightText: '#795548',
+  modalWrapper: '#000000B2',
+  footerLink: '#898989',
+  updateLamp: '#16C782',
+  selectedRoute: '#00BC4F',
+  updateLampWave: '#008139',
+  hover: '#b28d56',
 };
 
 export const gradients: IGradients = {
@@ -41,15 +44,33 @@ export const gradients: IGradients = {
 };
 
 export const lightTheme: ITheme = {
+  fontSizes: { ...fontSizes },
+  fontWeight: { ...fontWeight },
+  gradients: { ...gradients },
+  colors: { ...colors },
   bg: colors.white,
   toggle: colors.black,
   fontNavBar: colors.black,
   fontFooterText: colors.black,
+  fontCurrencyTime: colors.black,
+  bgColorCards: colors.lightBgCards,
+  currencyTitle: colors.lightTitle,
+  currencyText: colors.lightText,
+  bgModalMenu: colors.darkText,
 };
 
 export const darkTheme: ITheme = {
+  fontSizes: { ...fontSizes },
+  fontWeight: { ...fontWeight },
+  gradients: { ...gradients },
+  colors: { ...colors },
   bg: colors.black,
   toggle: colors.white,
-  fontNavBar: colors.grey,
+  fontNavBar: colors.darkTitle,
   fontFooterText: colors.white,
+  fontCurrencyTime: colors.darkTitle,
+  bgColorCards: colors.darkBgCards,
+  currencyTitle: colors.darkTitle,
+  currencyText: colors.darkText,
+  bgModalMenu: colors.black,
 };

@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 export const useCurrenciesData = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currencyData, setCurrencyData] = useState<IPreparedCurrenciesData | null>(null);
-  const [error, setError] = useState<Error>();
+  const [error, setError] = useState<Error | null>(null);
 
   const getCurrenciesData = async () => {
     try {

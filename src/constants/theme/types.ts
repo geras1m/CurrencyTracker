@@ -11,17 +11,20 @@ export interface IFontSizes {
 
 export interface IColors {
   black: string;
-  black1: string;
-  black2: string;
+  border: string;
+  darkBgCards: string;
+  lightBgCards: string;
   white: string;
-  grey: string;
-  grey1: string;
-  grey2: string;
-  green: string;
-  green1: string;
-  green2: string;
-  red: string;
-  orange: string;
+  darkTitle: string;
+  darkText: string;
+  lightTitle: string;
+  lightText: string;
+  modalWrapper: string;
+  footerLink: string;
+  updateLamp: string;
+  selectedRoute: string;
+  updateLampWave: string;
+  hover: string;
 }
 
 export interface IGradients {
@@ -38,10 +41,19 @@ export interface IFontWeight {
 }
 
 export interface ITheme {
+  fontSizes: IFontSizes;
+  fontWeight: IFontWeight;
+  gradients: IGradients;
+  colors: IColors;
   bg: string;
   toggle: string;
   fontNavBar: string;
   fontFooterText: string;
+  fontCurrencyTime: string;
+  bgColorCards: string;
+  currencyTitle: string;
+  currencyText: string;
+  bgModalMenu: string;
 }
 
 export enum ThemeValue {

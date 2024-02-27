@@ -4,11 +4,25 @@ const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
   }
   
   body{
     margin: 0;
     background-color: ${({ theme }) => theme.bg};
+  }
+
+  #root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 `;
 

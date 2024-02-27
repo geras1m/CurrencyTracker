@@ -21,6 +21,7 @@ export interface ICurrenciesResponse {
 
 export interface ICurrencyDataTemplate {
   symbol: string;
+  symbolBG: string;
   name: string;
   code: string;
   rate: number;
@@ -34,4 +35,10 @@ export interface IGetListCachedCurrencies {
 export interface IPreparedCurrenciesData {
   time: string;
   data: ICurrencyDataTemplate[];
+}
+
+export interface IModalData {
+  code: string;
+  rate: number;
+  name: string;
 }

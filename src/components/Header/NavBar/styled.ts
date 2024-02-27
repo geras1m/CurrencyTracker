@@ -1,4 +1,3 @@
-import { colors, fontSizes, fontWeight } from '@constants/theme/theme';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -11,17 +10,17 @@ export const NavList = styled.ul`
 `;
 
 export const NavLinkElem = styled(NavLink)`
-  font-weight: ${fontWeight.light};
-  font-size: ${fontSizes.px20};
+  font-weight: ${({ theme }) => theme.fontWeight.light};
+  font-size: ${({ theme }) => theme.fontSizes.px20};
   text-decoration: none;
   color: ${({ theme }) => theme.fontNavBar};
   transition: 0.2s ease-out;
 
   &:hover {
-    color: #b28d56;
+    color: ${({ theme }) => theme.colors.hover};
   }
 
   &.active {
-    color: ${colors.green1};
+    color: ${({ theme }) => theme.colors.selectedRoute};
   }
 `;

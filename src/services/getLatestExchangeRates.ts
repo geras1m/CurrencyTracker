@@ -1,9 +1,8 @@
+import { baseCurrency } from '@root/constants';
 import { ICurrenciesResponse } from '@root/types';
 import axios from 'axios';
 
 const { API_KEY, API_BASIC_URL } = process.env;
-
-const baseCurrency = 'USD';
 
 export async function getLatestExchangeRates(currencies: string | string[], base?: string) {
   const { data } = await axios.get<ICurrenciesResponse>(`${API_BASIC_URL}/latest`, {
