@@ -1,22 +1,52 @@
+import { Container } from '@components/App/styled';
+import { Currencies } from '@components/Currencies';
+import { Modal } from '@components/Currencies/Modal';
+import { Spinner } from '@components/Spinner';
 import { useCurrenciesData } from '@hooks/useCurrenciesData';
+import { ErrorMessage, MainCurrency, TimeUpdate, Wrapper } from '@pages/Home/styled';
+import { IModalData } from '@root/types';
+import { useCallback, useMemo, useState } from 'react';
 
 const Home = () => {
-  const { time, data, isLoading } = useCurrenciesData();
+  const { time, data, isLoading, error } = useCurrenciesData();
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [modalData, setModalData] = useState<IModalData | null>(null);
 
-  const map =
-    data &&
-    data.map((item) => (
-      <div key={item.code}>
-        {item.code}, {item.symbol}, {item.name}, {item.rate.toFixed(5)}
-      </div>
-    ));
+  const memoData = useMemo(() => data, [data]);
+
+  const handleOpenModal = useCallback((code: string, rate: number, name: string) => {
+    setIsModalOpen(true);
+    setModalData({ code, rate, name });
+    document.body.style.overflow = 'hidden';
+  }, []);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'auto';
+  };
 
   return (
-    <div>
-      <div>Last updated at {time}</div>
-      {isLoading && <div>Loading...</div>}
-      {!isLoading && map}
-    </div>
+    <MainCurrency>
+      {error && (
+        <Wrapper>
+          <ErrorMessage>Something went wrong :(</ErrorMessage>
+        </Wrapper>
+      )}
+
+      {isLoading && (
+        <Wrapper>
+          <Spinner width='100px' />
+        </Wrapper>
+      )}
+
+      {!isLoading && !error && memoData && (
+        <Container>
+          <TimeUpdate>Last updated at {time}</TimeUpdate>
+          <Currencies dataList={memoData} openModal={handleOpenModal} />
+          <Modal isOpen={isModalOpen} data={modalData} closeModal={handleCloseModal} />
+        </Container>
+      )}
+    </MainCurrency>
   );
 };
 
