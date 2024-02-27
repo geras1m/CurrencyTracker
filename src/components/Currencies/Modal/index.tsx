@@ -1,0 +1,32 @@
+import { CurrencyModalContent } from '@components/Currencies/CurrencyModalContent';
+import { ModalTitle, ModalWindow, ModalWrapper } from '@components/Currencies/Modal/styled';
+import { useOutsideClick } from '@hooks/useOutClick';
+import { IModalData } from '@root/types';
+import { FC } from 'react';
+import { createPortal } from 'react-dom';
+
+interface IModalProps {
+  isOpen: boolean;
+  data: IModalData | null;
+  closeModal: () => void;
+}
+
+export const Modal: FC<IModalProps> = ({ isOpen, data, closeModal }) => {
+  const ref = useOutsideClick(closeModal);
+
+  if (!isOpen) {
+    return null;
+  }
+
+  return createPortal(
+    <ModalWrapper>
+      {data && (
+        <ModalWindow ref={ref}>
+          <ModalTitle>{data.name}</ModalTitle>
+          <CurrencyModalContent code={data.code} />
+        </ModalWindow>
+      )}
+    </ModalWrapper>,
+    document.getElementById('modal-root')!,
+  );
+};
