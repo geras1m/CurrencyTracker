@@ -4,7 +4,9 @@ import { addToLocalStorage, getFromLocalStorage } from '@utils/localstorage';
 
 const cachedCurrencyTimeKey = 'currencies-date';
 const cachedCurrencyDateKey = 'currencies-list';
-const millisecondsInDay = 86_400_000;
+const millisecondsInDay = 14_400_000;
+// 4h - 14_400_000
+// 24h - 86_400_000
 
 const cacheDataAndTime = (dataTime: string | number, data: ICurrenciesResponseData) => {
   addToLocalStorage(cachedCurrencyTimeKey, dataTime.toString());
@@ -28,4 +30,19 @@ export const getListCachedCurrencies = async (currencies: string[]): Promise<IGe
   return { time: cachedTime.toString(), data: parseCachedData };
 };
 
-// export const getCachedCurrency = () => {};
+export const getCachedCurrencyExchangeRate = async (
+  currency: string,
+  baseCurrency: string,
+): Promise<number> => {
+  const keyCachedCurrencyExchangeRate = `${currency}:${baseCurrency}`;
+  const cachedData = sessionStorage.getItem(keyCachedCurrencyExchangeRate);
+
+  if (cachedData) return Number(JSON.parse(cachedData));
+
+  const responseData = await getLatestExchangeRates(currency, baseCurrency);
+  const exchangeRateData = responseData.data[currency].value;
+
+  sessionStorage.setItem(keyCachedCurrencyExchangeRate, exchangeRateData.toString());
+
+  return exchangeRateData;
+};
