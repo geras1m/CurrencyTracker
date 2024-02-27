@@ -1,4 +1,5 @@
 import GlobalStyles from '@components/App/styled';
+import { Banner } from '@components/Banner';
 import { Footer } from '@components/Footer';
 import Header from '@components/Header';
 import Main from '@components/Main';
@@ -26,7 +27,7 @@ const App = () => {
     <ThemeProvider theme={currentTheme}>
       <GlobalStyles />
       <Header theme={theme} switchTheme={handleToSwitchTheme} />
-      {/* <Poster/> */}
+      <Banner />
       <Main />
       <Footer />
     </ThemeProvider>

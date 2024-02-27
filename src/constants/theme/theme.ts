@@ -39,8 +39,7 @@ export const colors: IColors = {
 
 export const gradients: IGradients = {
   text: 'linear-gradient(90deg, rgba(0,206,44,1) 0%, rgba(174,223,35,1) 50%, rgba(163,220,0,1) 100%)',
-  background:
-    'linear-gradient(58deg, rgba(18,18,18,1) 0%, rgba(36,121,64,0.8072478991596639) 50%, rgba(18,18,18,1) 100%)',
+  background: 'linear-gradient(58deg, rgba(18,18,18,0) 20%, rgba(36,121,64,0.5) 50%, rgba(18,18,18,0) 80%)',
 };
 
 export const lightTheme: ITheme = {
