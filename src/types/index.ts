@@ -42,3 +42,14 @@ export interface IModalData {
   rate: number;
   name: string;
 }
+
+export interface IFooterLinks {
+  column: string;
+  links: string[];
+}
+
+export interface IFooterData {
+  title: string;
+  text: string;
+  copyright: string;
+}

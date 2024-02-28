@@ -49,6 +49,7 @@ export interface ITheme {
   toggle: string;
   fontNavBar: string;
   fontFooterText: string;
+  fontCurrencyTitle: string;
   fontCurrencyTime: string;
   bgColorCards: string;
   currencyTitle: string;

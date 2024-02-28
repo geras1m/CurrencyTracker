@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 interface ISpinnerElementProps {
   size: string;
+  $border: string;
 }
 
 export const SpinnerElement = styled.div<ISpinnerElementProps>`
-  border: 12px solid ${({ theme }) => theme.colors.updateLamp};
-  border-top: 12px ${({ theme }) => theme.colors.updateLampWave} solid;
+  border: ${({ $border, theme }) => `${$border} solid ${theme.colors.updateLamp}`};
+  border-top: ${({ $border, theme }) => `${$border} solid ${theme.colors.updateLampWave}`};
   border-radius: 50%;
   height: ${({ size }) => size};
   width: ${({ size }) => size};

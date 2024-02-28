@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IModalCurrencyMenuProps {
-  isOpen: boolean;
+  open: boolean;
 }
 
 export const ModalSelectedCurrency = styled.p`
@@ -22,9 +22,9 @@ export const ModalCurrencyMenuWrapper = styled.div`
 
 export const ModalCurrencyMenu = styled.ul<IModalCurrencyMenuProps>`
   position: absolute;
-  border-radius: ${({ isOpen }) => (isOpen ? '5px' : '0')};
+  border-radius: ${({ open }) => (open ? '5px' : '0')};
   width: 200px;
-  height: ${({ isOpen }) => (isOpen ? '148px' : '0')};
+  height: ${({ open }) => (open ? '148px' : '0')};
   overflow-y: scroll;
   color: ${({ theme }) => theme.currencyText};
   background-color: ${({ theme }) => theme.bgModalMenu};

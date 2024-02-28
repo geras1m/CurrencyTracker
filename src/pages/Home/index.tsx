@@ -1,5 +1,6 @@
 import { Container } from '@components/App/styled';
 import { Currencies } from '@components/Currencies';
+import { HomeSectionTitles } from '@components/Currencies/HomeSectionTitles';
 import { Modal } from '@components/Currencies/Modal';
 import { Spinner } from '@components/Spinner';
 import { useCurrenciesData } from '@hooks/useCurrenciesData';
@@ -35,13 +36,14 @@ const Home = () => {
 
       {isLoading && (
         <Wrapper>
-          <Spinner width='100px' />
+          <Spinner width='100px' border='12px' />
         </Wrapper>
       )}
 
       {!isLoading && !error && memoData && (
         <Container>
           <TimeUpdate>Last updated at {time}</TimeUpdate>
+          <HomeSectionTitles title='Quotes' />
           <Currencies dataList={memoData} openModal={handleOpenModal} />
           <Modal isOpen={isModalOpen} data={modalData} closeModal={handleCloseModal} />
         </Container>

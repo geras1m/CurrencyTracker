@@ -3,12 +3,13 @@ import { FC } from 'react';
 
 interface ISpinnerProps {
   width: string;
+  border: string;
 }
 
-export const Spinner: FC<ISpinnerProps> = ({ width }) => {
+export const Spinner: FC<ISpinnerProps> = ({ width, border }) => {
   return (
     <SpinnerWrapper>
-      <SpinnerElement size={width} />
+      <SpinnerElement size={width} $border={border} />
     </SpinnerWrapper>
   );
 };

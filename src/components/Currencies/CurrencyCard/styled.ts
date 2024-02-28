@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface ICurrencyCardIconProps {
-  bgColor: string;
+  color: string;
 }
 
 export const CurrencyCardWrapper = styled.li`
@@ -25,7 +25,7 @@ export const CurrencyCardIcon = styled.div<ICurrencyCardIconProps>`
   color: ${({ theme }) => theme.colors.white};
   align-items: center;
   justify-content: center;
-  background-color: ${({ bgColor }) => bgColor};
+  background-color: ${({ color }) => color};
 `;
 
 export const CurrencyCardInform = styled.div`
@@ -35,7 +35,7 @@ export const CurrencyCardInform = styled.div`
   justify-content: space-around;
 `;
 
-export const CurrencyCardName = styled.h3`
+export const CurrencyCardName = styled.h4`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px32};
   color: ${({ theme }) => theme.currencyTitle};

@@ -6,6 +6,7 @@ import {
   ModalOutput,
   ModalSelectedCurrency,
 } from '@components/Currencies/CurrencyModalContent/styled';
+import { Spinner } from '@components/Spinner';
 import { useExchangeRate } from '@hooks/useExchangeRate';
 import { useOutsideClick } from '@hooks/useOutClick';
 import { baseCurrency, CurrenciesList } from '@root/constants';
@@ -70,20 +71,25 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
 
   return (
     <>
-      <ModalOutput>
-        {isLoading && <div>Loading...</div>}
-        {!isLoading && (
-          <>
-            {+currenciesCount === 0 ? 1 : currenciesCount} {currentCurrency} = {countCountExchangeRate()}{' '}
-            {code}
-          </>
-        )}
-      </ModalOutput>
-      <ModalCurrencyInput value={currenciesCount} onChange={handleChangeCount} />
-      <ModalCurrencyMenuWrapper ref={ref}>
-        <ModalSelectedCurrency onClick={handleOpenCurrencyList}>{currentCurrency}</ModalSelectedCurrency>
-        <ModalCurrencyMenu isOpen={isOpenCurrencyList}>{currenciesItems}</ModalCurrencyMenu>
-      </ModalCurrencyMenuWrapper>
+      {error && <ModalOutput>Something went wrong :(</ModalOutput>}
+      {!error && (
+        <>
+          <ModalOutput>
+            {isLoading && <Spinner width='23px' border='5px' />}
+            {!isLoading && (
+              <>
+                {+currenciesCount === 0 ? 1 : currenciesCount} {currentCurrency} = {countCountExchangeRate()}{' '}
+                {code}
+              </>
+            )}
+          </ModalOutput>
+          <ModalCurrencyInput value={currenciesCount} onChange={handleChangeCount} />
+          <ModalCurrencyMenuWrapper ref={ref}>
+            <ModalSelectedCurrency onClick={handleOpenCurrencyList}>{currentCurrency}</ModalSelectedCurrency>
+            <ModalCurrencyMenu open={isOpenCurrencyList}>{currenciesItems}</ModalCurrencyMenu>
+          </ModalCurrencyMenuWrapper>
+        </>
+      )}
     </>
   );
 };
