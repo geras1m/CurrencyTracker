@@ -39,7 +39,14 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
   const ref = useOutsideClick(handleCloseCurrencyList);
 
   const handleChangeCount = (e: ChangeEvent<HTMLInputElement>) => {
-    setCurrenciesCount(String(e.target.value));
+    const { value } = e.target;
+    let num = Math.abs(Number.parseFloat(value));
+
+    if (Number.isNaN(num)) num = 0;
+
+    if (num > 10000) return;
+
+    setCurrenciesCount(String(num));
   };
 
   const currenciesItems = CurrenciesList.filter((currency) => currency !== currentCurrency).map(
@@ -56,17 +63,17 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
   );
 
   const countCountExchangeRate = () => {
-    let currentRate;
-    const numberExchangeRate = Number(exchangeRate);
-    const numberCurrenciesRate = Number(currenciesCount);
+    // let currentRate;
+    // const numberExchangeRate = Number(exchangeRate);
+    // const numberCurrenciesRate = Number(currenciesCount);
 
-    if (exchangeRate && numberCurrenciesRate !== 0) {
-      currentRate = numberExchangeRate * numberCurrenciesRate;
-    } else {
-      currentRate = numberExchangeRate;
-    }
+    // if (exchangeRate && numberCurrenciesRate !== 0) {
+    //   currentRate = numberExchangeRate * numberCurrenciesRate;
+    // } else {
+    //   currentRate = numberExchangeRate;
+    // }
 
-    return currentRate.toFixed(5);
+    return (Number(exchangeRate) * Number(currenciesCount)).toFixed(5);
   };
 
   return (
@@ -78,8 +85,7 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
             {isLoading && <Spinner width='23px' border='5px' />}
             {!isLoading && (
               <>
-                {+currenciesCount === 0 ? 1 : currenciesCount} {currentCurrency} = {countCountExchangeRate()}{' '}
-                {code}
+                {currenciesCount} {currentCurrency} = {countCountExchangeRate()} {code}
               </>
             )}
           </ModalOutput>

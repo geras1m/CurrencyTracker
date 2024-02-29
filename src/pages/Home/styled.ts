@@ -16,11 +16,3 @@ export const ErrorMessage = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.px32};
   color: ${({ theme }) => theme.currencyTitle};
 `;
-
-export const TimeUpdate = styled.p`
-  padding: 57px 0;
-  text-align: center;
-  font-weight: ${({ theme }) => theme.fontWeight.light};
-  font-size: ${({ theme }) => theme.fontSizes.px28};
-  color: ${({ theme }) => theme.fontCurrencyTime};
-`;

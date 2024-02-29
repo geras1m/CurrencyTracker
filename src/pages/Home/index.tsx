@@ -2,9 +2,10 @@ import { Container } from '@components/App/styled';
 import { Currencies } from '@components/Currencies';
 import { HomeSectionTitles } from '@components/Currencies/HomeSectionTitles';
 import { Modal } from '@components/Currencies/Modal';
+import { LastUpdateTime } from '@components/LastUpdateTime';
 import { Spinner } from '@components/Spinner';
 import { useCurrenciesData } from '@hooks/useCurrenciesData';
-import { ErrorMessage, MainCurrency, TimeUpdate, Wrapper } from '@pages/Home/styled';
+import { ErrorMessage, MainCurrency, Wrapper } from '@pages/Home/styled';
 import { IModalData } from '@root/types';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -42,7 +43,7 @@ const Home = () => {
 
       {!isLoading && !error && memoData && (
         <Container>
-          <TimeUpdate>Last updated at {time}</TimeUpdate>
+          <LastUpdateTime time={time} />
           <HomeSectionTitles title='Quotes' />
           <Currencies dataList={memoData} openModal={handleOpenModal} />
           <Modal isOpen={isModalOpen} data={modalData} closeModal={handleCloseModal} />
