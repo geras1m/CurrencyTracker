@@ -1,4 +1,5 @@
 import { ThemeType } from '@constants/theme/types';
+import { Chart } from 'chart.js';
 
 export interface IThemeProps {
   theme: ThemeType;
@@ -53,3 +54,13 @@ export interface IFooterData {
   text: string;
   copyright: string;
 }
+
+export interface IChartData {
+  x: number;
+  o: number;
+  h: number;
+  l: number;
+  c: number;
+}
+
+export type IChart = Chart<'candlestick', IChartData[], string> | undefined;
