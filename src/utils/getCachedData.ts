@@ -1,8 +1,8 @@
+import { cachedCurrencyTimeKey } from '@root/constants';
 import { getLatestExchangeRates } from '@root/services/getLatestExchangeRates';
 import { ICurrenciesResponse, ICurrenciesResponseData, IGetListCachedCurrencies } from '@root/types';
 import { addToLocalStorage, getFromLocalStorage } from '@utils/localstorage';
 
-const cachedCurrencyTimeKey = 'currencies-date';
 const cachedCurrencyDateKey = 'currencies-list';
 const millisecondsInDay = 14_400_000;
 // 4h - 14_400_000
