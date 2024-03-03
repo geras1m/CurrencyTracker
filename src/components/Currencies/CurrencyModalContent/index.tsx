@@ -63,16 +63,6 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
   );
 
   const countCountExchangeRate = () => {
-    // let currentRate;
-    // const numberExchangeRate = Number(exchangeRate);
-    // const numberCurrenciesRate = Number(currenciesCount);
-
-    // if (exchangeRate && numberCurrenciesRate !== 0) {
-    //   currentRate = numberExchangeRate * numberCurrenciesRate;
-    // } else {
-    //   currentRate = numberExchangeRate;
-    // }
-
     return (Number(exchangeRate) * Number(currenciesCount)).toFixed(5);
   };
 
