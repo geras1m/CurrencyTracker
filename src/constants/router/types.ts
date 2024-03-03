@@ -1,4 +1,5 @@
 import Home from '@pages/Home';
+import Timeline from '@pages/Timeline';
 import { LazyExoticComponent } from 'react';
 
 export interface IRouterPaths {
@@ -14,7 +15,7 @@ export interface INavLink {
   title: string;
 }
 
-type LazyImportComponentType = typeof Home;
+type LazyImportComponentType = typeof Home | typeof Timeline;
 
 export interface IRoute {
   path: string;

@@ -3,7 +3,7 @@ import {
   MenuCurrencyItem,
   MenuCurrencyList,
   MenuSelectedCurrency,
-} from '@components/CurrencySelector/styled';
+} from '@components/Timeline/CurrencySelector/styled';
 import { CurrenciesList } from '@root/constants';
 import { PureComponent } from 'react';
 

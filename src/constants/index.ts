@@ -2,6 +2,8 @@ import { ICurrencyDataTemplate, IFooterData, IFooterLinks } from '@root/types';
 
 export const baseCurrency = 'USD';
 
+export const cachedCurrencyTimeKey = 'currencies-date';
+
 export const CurrenciesList: string[] = [
   'BYN',
   'EUR',
