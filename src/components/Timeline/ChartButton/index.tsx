@@ -1,3 +1,4 @@
+import { Button } from '@pages/Timeline/styled';
 import { PureComponent } from 'react';
 
 interface IChartButton {
@@ -11,9 +12,9 @@ export class ChartButton extends PureComponent<IChartButton, object> {
     const startDate = Date.parse('2024-03-01');
 
     return (
-      <button type='button' onClick={() => handleGetRandomData(startDate, dataElementsCount)}>
-        Random Chart
-      </button>
+      <Button type='button' onClick={() => handleGetRandomData(startDate, dataElementsCount)}>
+        Create a random chart
+      </Button>
     );
   }
 }

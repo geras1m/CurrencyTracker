@@ -11,20 +11,20 @@ export interface IFontSizes {
 
 export interface IColors {
   black: string;
-  border: string;
-  darkBgCards: string;
-  lightBgCards: string;
+  grey: string;
+  black1: string;
+  white1: string;
   white: string;
-  darkTitle: string;
-  darkText: string;
-  lightTitle: string;
-  lightText: string;
-  modalWrapper: string;
-  footerLink: string;
-  updateLamp: string;
-  selectedRoute: string;
-  updateLampWave: string;
-  hover: string;
+  white2: string;
+  grey1: string;
+  black2: string;
+  brown: string;
+  black3: string;
+  grey2: string;
+  green: string;
+  green1: string;
+  green2: string;
+  orange: string;
 }
 
 export interface IGradients {

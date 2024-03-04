@@ -1,3 +1,4 @@
+import ArrowSelector from '@assets/Arrow-selector.svg';
 import {
   CurrencyMenuWrapper,
   MenuCurrencyItem,
@@ -41,8 +42,10 @@ export class CurrencySelector extends PureComponent<ICurrencySelectorProps, ICur
 
     return (
       <CurrencyMenuWrapper>
-        <MenuSelectedCurrency onClick={this.handleOpenList}>{currency}</MenuSelectedCurrency>
-        <MenuCurrencyList>
+        <MenuSelectedCurrency onClick={this.handleOpenList}>
+          {currency} <ArrowSelector />
+        </MenuSelectedCurrency>
+        <MenuCurrencyList open={isOpenList}>
           {isOpenList &&
             CurrenciesList.filter((currencyItem) => currency !== currencyItem).map((currencyItem) => {
               return (

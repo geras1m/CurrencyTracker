@@ -4,10 +4,11 @@ export const ChartMessage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid;
-  height: 60px;
+  padding: 15px;
   width: 100%;
-  background-color: green;
   position: fixed;
   top: 0;
+  font-size: ${({ theme }) => theme.fontSizes.px20};
+  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.gradients.text};
 `;

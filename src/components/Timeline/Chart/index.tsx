@@ -1,7 +1,7 @@
 import 'chart.js/auto';
 import 'chartjs-adapter-luxon';
 
-import { CanvasChart } from '@components/Timeline/Chart/styled';
+import { CanvasChart, ChartWrapper } from '@components/Timeline/Chart/styled';
 import { observer } from '@root/observer';
 import { IChart, IChartData } from '@root/types';
 import { Chart } from 'chart.js';
@@ -83,9 +83,9 @@ export class ChartComponent extends Component<IChartComponent, object> {
 
   render() {
     return (
-      <div>
+      <ChartWrapper>
         <CanvasChart ref={this.chartRef} />
-      </div>
+      </ChartWrapper>
     );
   }
 }

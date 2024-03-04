@@ -21,7 +21,7 @@ export const ToggleWrapper = styled.button`
   background-color: ${({ theme }) => theme.bg};
 
   &:hover {
-    box-shadow: 0 0 5px 2px ${({ theme }) => theme.colors.footerLink};
+    box-shadow: 0 0 5px 2px ${({ theme }) => theme.colors.grey2};
   }
 `;
 

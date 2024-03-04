@@ -9,7 +9,7 @@ export const ModalWrapper = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  background: ${({ theme }) => theme.colors.modalWrapper};
+  background: ${({ theme }) => theme.colors.black3};
   cursor: pointer;
 `;
 
@@ -21,7 +21,7 @@ export const ModalWindow = styled.div`
   width: 500px;
   height: 350px;
   border-radius: 8px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   background-color: ${({ theme }) => theme.bgColorCards};
   cursor: auto;
 `;

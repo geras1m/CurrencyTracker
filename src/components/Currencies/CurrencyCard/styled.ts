@@ -10,7 +10,7 @@ export const CurrencyCardWrapper = styled.li`
   align-items: center;
   column-gap: 30px;
   padding: 30px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   background-color: ${({ theme }) => theme.bgColorCards};
   border-radius: 8px;
   cursor: pointer;

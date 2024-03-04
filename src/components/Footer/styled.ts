@@ -72,11 +72,11 @@ export const FooterLink = styled.a.attrs({
   target: '_blank',
 })`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.footerLink};
+  color: ${({ theme }) => theme.colors.grey2};
   transition: 0.3s ease-out;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.hover};
+    color: ${({ theme }) => theme.colors.orange};
   }
 `;
 
@@ -85,5 +85,5 @@ export const FooterCopyright = styled.div`
   text-align: center;
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px20};
-  color: ${({ theme }) => theme.colors.footerLink};
+  color: ${({ theme }) => theme.colors.grey2};
 `;

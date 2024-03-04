@@ -1,4 +1,6 @@
 import { ChartInput } from '@components/Timeline/ChartInput';
+import { ChartInputWrapper } from '@components/Timeline/ChartInputsContainer/styled';
+import { Button } from '@pages/Timeline/styled';
 import { IChartData } from '@root/types';
 import { Component } from 'react';
 
@@ -11,6 +13,8 @@ interface IChartInputsContainerState {
 }
 
 export class ChartInputsContainer extends Component<IChartInputsContainerProps, IChartInputsContainerState> {
+  daysCount = 30;
+
   constructor(props: IChartInputsContainerProps) {
     super(props);
     this.state = {
@@ -33,15 +37,19 @@ export class ChartInputsContainer extends Component<IChartInputsContainerProps, 
 
   render() {
     const { inputsData } = this.state;
-    const isDisabled = inputsData.length !== 3;
+    const isDisabled = inputsData.length >= this.daysCount;
 
     return (
-      <div>
-        <ChartInput addDataFromInput={this.addDataFromInput} />
-        <button type='button' disabled={isDisabled} onClick={this.createChart}>
-          Create Chart
-        </button>
-      </div>
+      <ChartInputWrapper>
+        <ChartInput
+          isDisabled={isDisabled}
+          daysCount={this.daysCount}
+          addDataFromInput={this.addDataFromInput}
+        />
+        <Button type='button' disabled={!isDisabled} onClick={this.createChart}>
+          Create the chart
+        </Button>
+      </ChartInputWrapper>
     );
   }
 }

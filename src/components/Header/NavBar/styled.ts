@@ -17,10 +17,10 @@ export const NavLinkElem = styled(NavLink)`
   transition: 0.2s ease-out;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.hover};
+    color: ${({ theme }) => theme.colors.orange};
   }
 
   &.active {
-    color: ${({ theme }) => theme.colors.selectedRoute};
+    color: ${({ theme }) => theme.colors.green1};
   }
 `;

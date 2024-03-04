@@ -12,7 +12,7 @@ export const ModalSelectedCurrency = styled.p`
   width: 200px;
   cursor: pointer;
   padding: 5px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   color: ${({ theme }) => theme.currencyText};
 `;
 
@@ -36,7 +36,7 @@ export const ModalCurrencyMenu = styled.ul<IModalCurrencyMenuProps>`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.lightTitle};
+    background-color: ${({ theme }) => theme.colors.black2};
   }
 
   &::-webkit-scrollbar-track {
@@ -49,7 +49,7 @@ export const ModalCurrencyMenu = styled.ul<IModalCurrencyMenuProps>`
 export const ModalMenuItem = styled.li`
   list-style-type: none;
   cursor: pointer;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
   margin: 5px 5px 0;
   transition: 0.1s ease;
 
@@ -59,7 +59,7 @@ export const ModalMenuItem = styled.li`
   }
 
   &:hover {
-    color: ${({ theme }) => theme.colors.selectedRoute};
+    color: ${({ theme }) => theme.colors.green1};
   }
 `;
 
@@ -74,7 +74,7 @@ export const ModalCurrencyInput = styled.input.attrs({
   margin-bottom: 30px;
   outline: none;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.colors.darkText};
+  background-color: ${({ theme }) => theme.colors.grey1};
   padding: 0 5px;
   font-size: 20px;
 
