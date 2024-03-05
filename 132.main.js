@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcurrency_tracker=self.webpackChunkcurrency_tracker||[]).push([[132],{2132:(r,c,e)=>{e.r(c),e.d(c,{default:()=>n});var u=e(4848);const n=()=>(0,u.jsx)("div",{children:"NotFound"})}}]);
