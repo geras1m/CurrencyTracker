@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcurrency_tracker=self.webpackChunkcurrency_tracker||[]).push([[618],{2618:(c,r,e)=>{e.r(r),e.d(r,{default:()=>t});var s=e(4848);const t=()=>(0,s.jsx)("div",{children:"Contacts"})}}]);
