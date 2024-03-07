@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 interface IMenuCurrencyListProps {
@@ -20,6 +21,10 @@ export const MenuSelectedCurrency = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.medium};
   color: ${({ theme }) => theme.fontCurrencyTime};
   cursor: pointer;
+
+  @media (max-width: ${mediaSizes.maxWidth750px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px20};
+  }
 `;
 
 export const MenuCurrencyList = styled.ul<IMenuCurrencyListProps>`

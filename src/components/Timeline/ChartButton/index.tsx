@@ -1,4 +1,4 @@
-import { Button } from '@pages/Timeline/styled';
+import { Button } from '@components/Timeline/ChartButton/styled';
 import { PureComponent } from 'react';
 
 interface IChartButton {

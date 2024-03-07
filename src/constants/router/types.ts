@@ -1,3 +1,4 @@
+import BankCard from '@pages/BankCard';
 import Home from '@pages/Home';
 import Timeline from '@pages/Timeline';
 import { LazyExoticComponent } from 'react';
@@ -15,7 +16,7 @@ export interface INavLink {
   title: string;
 }
 
-type LazyImportComponentType = typeof Home | typeof Timeline;
+type LazyImportComponentType = typeof Home | typeof Timeline | typeof BankCard;
 
 export interface IRoute {
   path: string;

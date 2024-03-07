@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const HomeSectionTitlesWrapper = styled.h3`
@@ -7,4 +8,12 @@ export const HomeSectionTitlesWrapper = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.px32};
   padding-bottom: 25px;
   color: ${({ theme }) => theme.fontCurrencyTitle};
+
+  @media (max-width: ${mediaSizes.maxWidth1250px}) {
+    max-width: 100%;
+  }
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px28};
+  }
 `;

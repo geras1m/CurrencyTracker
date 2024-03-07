@@ -34,7 +34,6 @@ export class ChartNotifyModal extends Component<IChartNotifyModalProps, IChartNo
 
     if (prevState.isOpen !== isOpen && prevProps.currentCurrency === currentCurrency) {
       this.timeOut();
-      console.log('update');
     }
   }
 

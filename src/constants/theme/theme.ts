@@ -1,7 +1,9 @@
 import { IColors, IFontSizes, IFontWeight, IGradients, ITheme } from '@constants/theme/types';
 
 export const fontSizes: IFontSizes = {
+  px16: '16px',
   px20: '20px',
+  px22: '22px',
   px24: '24px',
   px25: '25px',
   px26: '26px',
@@ -24,6 +26,8 @@ export const colors: IColors = {
   black1: '#202025',
   black2: '#181818',
   black3: '#000000B2',
+  black4: '#1B2028',
+  black5: '#1B2028',
   white: '#ffffff',
   white1: '#cdcdd7',
   white2: '#D9D9D9',
@@ -34,7 +38,7 @@ export const colors: IColors = {
   green1: '#00BC4F',
   green2: '#008139',
   brown: '#795548',
-  orange: '#b28d56',
+  orange: '#ecf45a',
 };
 
 export const gradients: IGradients = {
@@ -74,4 +78,14 @@ export const darkTheme: ITheme = {
   currencyTitle: colors.white2,
   currencyText: colors.grey1,
   bgModalMenu: colors.black,
+};
+
+export const mediaSizes = {
+  maxWidth1250px: '1250px',
+  maxWidth1050px: '1050px',
+  maxWidth1000px: '1000px',
+  maxWidth850px: '850px',
+  maxWidth750px: '750px',
+  maxWidth650px: '650px',
+  maxWidth450px: '450px',
 };

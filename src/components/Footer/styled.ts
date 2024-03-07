@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
@@ -7,14 +8,32 @@ export const FooterWrapper = styled.footer`
   width: 100%;
 `;
 
+export const FooterContainer = styled.div`
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0 15px;
+`;
+
 export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: ${mediaSizes.maxWidth1000px}) {
+    flex-direction: column;
+  }
 `;
 
 export const FooterInform = styled.div`
   max-width: 482px;
   margin-right: 105px;
+
+  @media (max-width: ${mediaSizes.maxWidth1000px}) {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
 `;
 
 export const FooterInformTitle = styled.h2`
@@ -23,6 +42,10 @@ export const FooterInformTitle = styled.h2`
   background: ${({ theme }) => theme.gradients.text};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px20};
+  }
 `;
 
 export const FooterInformWrapper = styled.div`
@@ -37,6 +60,10 @@ export const FooterInformText = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.light};
   color: ${({ theme }) => theme.fontNavBar};
   line-height: 35px;
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px20};
+  }
 `;
 
 export const FooterLinksWrapper = styled.div`
@@ -53,6 +80,10 @@ export const FooterLinksTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.px28};
   color: ${({ theme }) => theme.fontFooterText};
   margin-bottom: 40px;
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px20};
+  }
 `;
 
 export const FooterLinksList = styled.ul`
@@ -65,6 +96,10 @@ export const FooterLinksItem = styled.li`
   list-style: none;
   font-size: ${({ theme }) => theme.fontSizes.px24};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px20};
+  }
 `;
 
 export const FooterLink = styled.a.attrs({
@@ -86,4 +121,8 @@ export const FooterCopyright = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px20};
   color: ${({ theme }) => theme.colors.grey2};
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px16};
+  }
 `;

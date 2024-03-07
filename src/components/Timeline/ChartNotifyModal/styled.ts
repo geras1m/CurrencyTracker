@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const ChartMessage = styled.div`
@@ -11,4 +12,8 @@ export const ChartMessage = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.px20};
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.gradients.text};
+
+  @media (max-width: ${mediaSizes.maxWidth750px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px16};
+  }
 `;

@@ -8,7 +8,7 @@ interface IToggleProps {
 
 export const ToggleWrapper = styled.button`
   width: 50px;
-  height: 28px;
+  min-height: 28px;
   border: 2px solid ${({ theme }) => theme.toggle};
   border-radius: 14px;
   display: flex;

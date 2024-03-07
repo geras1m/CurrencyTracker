@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const ChatInputContainer = styled.div`
@@ -14,6 +15,13 @@ export const ChatInputFieldsWrapper = styled.div`
   display: flex;
   justify-content: end;
   gap: 30px;
+
+  @media (max-width: ${mediaSizes.maxWidth850px}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+  }
 `;
 
 export const ChatInputField = styled.input.attrs({
@@ -29,5 +37,9 @@ export const ChatInputField = styled.input.attrs({
 
   &::placeholder {
     font-size: 14px;
+  }
+
+  @media (max-width: ${mediaSizes.maxWidth850px}) {
+    width: 170px;
   }
 `;

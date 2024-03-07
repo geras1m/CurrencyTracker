@@ -1,6 +1,6 @@
 import FooterInformLogo from '@assets/Logo.svg';
-import { Container } from '@components/App/styled';
 import {
+  FooterContainer,
   FooterContent,
   FooterCopyright,
   FooterInform,
@@ -39,7 +39,7 @@ export const Footer = () => {
 
   return (
     <FooterWrapper>
-      <Container>
+      <FooterContainer>
         <FooterContent>
           <FooterInform>
             <FooterInformWrapper>
@@ -51,7 +51,7 @@ export const Footer = () => {
           <FooterLinksWrapper>{linksColumnList}</FooterLinksWrapper>
         </FooterContent>
         <FooterCopyright>{copyright}</FooterCopyright>
-      </Container>
+      </FooterContainer>
     </FooterWrapper>
   );
 };

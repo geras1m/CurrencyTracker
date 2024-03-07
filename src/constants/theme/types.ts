@@ -1,5 +1,7 @@
 export interface IFontSizes {
+  px16: string;
   px20: string;
+  px22: string;
   px24: string;
   px25: string;
   px26: string;
@@ -20,6 +22,8 @@ export interface IColors {
   black2: string;
   brown: string;
   black3: string;
+  black4: string;
+  black5: string;
   grey2: string;
   green: string;
   green1: string;

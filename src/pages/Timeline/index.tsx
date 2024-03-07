@@ -6,11 +6,9 @@ import { ChartInputsContainer } from '@components/Timeline/ChartInputsContainer'
 import { ChartNotifyModal } from '@components/Timeline/ChartNotifyModal';
 import { CurrencySelector } from '@components/Timeline/CurrencySelector';
 import { ChartSettingsWrapper, MainTimeline } from '@pages/Timeline/styled';
-import { cachedCurrencyTimeKey } from '@root/constants';
 import { IChartData } from '@root/types';
 import { getRandomData } from '@utils/chartUtils';
-import { getFromLocalStorage } from '@utils/localstorage';
-import { parseTimeFromMilliseconds } from '@utils/time';
+import { getTimeFromLocalstorage } from '@utils/time';
 import { PureComponent } from 'react';
 
 interface IState {
@@ -42,14 +40,14 @@ class Timeline extends PureComponent<object, IState> {
 
   render() {
     const { currency, chartData } = this.state;
-    const isTime = getFromLocalStorage(cachedCurrencyTimeKey);
-    const parsedTime = isTime ? parseTimeFromMilliseconds(isTime) : '--:-- PM';
+    const parsedTime = getTimeFromLocalstorage();
 
     return (
       <MainTimeline>
         <Container>
           <ChartNotifyModal currentCurrency={currency} />
           <LastUpdateTime time={parsedTime} />
+
           <ChartSettingsWrapper>
             <CurrencySelector currency={currency} setCurrency={this.handleSetCurrency} />
             <ChartButton handleGetRandomData={this.handleGetRandomData} />

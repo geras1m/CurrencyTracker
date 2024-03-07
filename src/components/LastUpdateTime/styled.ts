@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const TimeUpdate = styled.div`
@@ -10,4 +11,9 @@ export const TimeUpdate = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSizes.px28};
   color: ${({ theme }) => theme.fontCurrencyTime};
+
+  @media (max-width: ${mediaSizes.maxWidth750px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px22};
+    padding: 30px 0;
+  }
 `;

@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 interface ICurrencyCardIconProps {
@@ -14,6 +15,11 @@ export const CurrencyCardWrapper = styled.li`
   background-color: ${({ theme }) => theme.bgColorCards};
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s ease-out;
+
+  &:hover {
+    box-shadow: 1px -1px 14px 0px rgba(129, 129, 129, 1);
+  }
 `;
 
 export const CurrencyCardIcon = styled.div<ICurrencyCardIconProps>`
@@ -26,6 +32,12 @@ export const CurrencyCardIcon = styled.div<ICurrencyCardIconProps>`
   align-items: center;
   justify-content: center;
   background-color: ${({ color }) => color};
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    height: 60px;
+    width: 60px;
+    font-size: ${({ theme }) => theme.fontSizes.px20};
+  }
 `;
 
 export const CurrencyCardInform = styled.div`
@@ -39,10 +51,18 @@ export const CurrencyCardName = styled.h4`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px32};
   color: ${({ theme }) => theme.currencyTitle};
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px20};
+  }
 `;
 
 export const CurrencyCardRate = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSizes.px20};
   color: ${({ theme }) => theme.currencyText};
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px16};
+  }
 `;

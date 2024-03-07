@@ -63,4 +63,11 @@ export interface IChartData {
   c: number;
 }
 
+export interface IBankData {
+  name: string;
+  latitude: number;
+  longitude: number;
+  currencies: string[];
+}
+
 export type IChart = Chart<'candlestick', IChartData[], string> | undefined;

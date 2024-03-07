@@ -1,6 +1,6 @@
+import { Button } from '@components/Timeline/ChartButton/styled';
 import { ChartInput } from '@components/Timeline/ChartInput';
 import { ChartInputWrapper } from '@components/Timeline/ChartInputsContainer/styled';
-import { Button } from '@pages/Timeline/styled';
 import { IChartData } from '@root/types';
 import { Component } from 'react';
 

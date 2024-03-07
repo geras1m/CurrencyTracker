@@ -18,6 +18,7 @@ export const ModalSelectedCurrency = styled.p`
 
 export const ModalCurrencyMenuWrapper = styled.div`
   position: relative;
+  margin-bottom: 30px;
 `;
 
 export const ModalCurrencyMenu = styled.ul<IModalCurrencyMenuProps>`

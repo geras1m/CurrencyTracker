@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
@@ -24,6 +25,7 @@ export const ModalWindow = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.grey};
   background-color: ${({ theme }) => theme.bgColorCards};
   cursor: auto;
+  margin: 0 20px;
 `;
 
 export const ModalTitle = styled.h3`
@@ -31,4 +33,8 @@ export const ModalTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.px32};
   color: ${({ theme }) => theme.currencyTitle};
   margin-bottom: 50px;
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    font-size: ${({ theme }) => theme.fontSizes.px24};
+  }
 `;

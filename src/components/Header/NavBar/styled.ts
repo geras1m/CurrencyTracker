@@ -1,3 +1,4 @@
+import { mediaSizes } from '@constants/theme/theme';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -7,6 +8,16 @@ export const NavList = styled.ul`
   justify-content: space-between;
   column-gap: 112px;
   margin: 0;
+
+  @media (max-width: ${mediaSizes.maxWidth1000px}) {
+    column-gap: 70px;
+  }
+
+  @media (max-width: ${mediaSizes.maxWidth750px}) {
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const NavLinkElem = styled(NavLink)`
