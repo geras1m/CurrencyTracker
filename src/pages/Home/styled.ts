@@ -14,5 +14,5 @@ export const Wrapper = styled.div`
 export const ErrorMessage = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px32};
-  color: ${({ theme }) => theme.currencyTitle};
+  color: ${({ theme }) => theme.colors.currencyTitle};
 `;

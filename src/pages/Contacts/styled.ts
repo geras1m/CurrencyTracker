@@ -5,7 +5,7 @@ export const MainContactUs = styled.main``;
 
 export const ContactUsTitle = styled.h2`
   margin-bottom: 10px;
-  color: ${({ theme }) => theme.fontCurrencyTitle};
+  color: ${({ theme }) => theme.colors.fontCurrencyTitle};
   font-size: ${({ theme }) => theme.fontSizes.px35};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
 

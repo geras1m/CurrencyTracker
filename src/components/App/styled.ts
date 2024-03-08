@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   
   body{
     margin: 0;
-    background-color: ${({ theme }) => theme.bg};
+    background-color: ${({ theme }) => theme.colors.bg};
   }
 
   #root {

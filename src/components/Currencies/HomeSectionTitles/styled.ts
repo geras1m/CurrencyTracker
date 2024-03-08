@@ -7,7 +7,7 @@ export const HomeSectionTitlesWrapper = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px32};
   padding-bottom: 25px;
-  color: ${({ theme }) => theme.fontCurrencyTitle};
+  color: ${({ theme }) => theme.colors.fontCurrencyTitle};
 
   @media (max-width: ${mediaSizes.maxWidth1250px}) {
     max-width: 100%;

@@ -13,7 +13,7 @@ export const ModalSelectedCurrency = styled.p`
   cursor: pointer;
   padding: 5px;
   border: 1px solid ${({ theme }) => theme.colors.grey};
-  color: ${({ theme }) => theme.currencyText};
+  color: ${({ theme }) => theme.colors.currencyText};
 `;
 
 export const ModalCurrencyMenuWrapper = styled.div`
@@ -27,8 +27,8 @@ export const ModalCurrencyMenu = styled.ul<IModalCurrencyMenuProps>`
   width: 200px;
   height: ${({ open }) => (open ? '148px' : '0')};
   overflow-y: scroll;
-  color: ${({ theme }) => theme.currencyText};
-  background-color: ${({ theme }) => theme.bgModalMenu};
+  color: ${({ theme }) => theme.colors.currencyText};
+  background-color: ${({ theme }) => theme.colors.bgModalMenu};
   transition: 0.3s ease-out;
 
   &::-webkit-scrollbar {
@@ -87,6 +87,6 @@ export const ModalCurrencyInput = styled.input.attrs({
 export const ModalOutput = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSizes.px20};
-  color: ${({ theme }) => theme.currencyText};
+  color: ${({ theme }) => theme.colors.currencyText};
   margin-bottom: 30px;
 `;

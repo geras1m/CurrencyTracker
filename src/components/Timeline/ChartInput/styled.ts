@@ -8,7 +8,7 @@ export const ChatInputContainer = styled.div`
 export const ChatInputDays = styled.p`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.currencyText};
+  color: ${({ theme }) => theme.colors.currencyText};
 `;
 
 export const ChatInputFieldsWrapper = styled.div`

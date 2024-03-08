@@ -2,6 +2,7 @@ import 'chart.js/auto';
 import 'chartjs-adapter-luxon';
 
 import { CanvasChart, ChartWrapper } from '@components/Timeline/Chart/styled';
+import { colors } from '@constants/theme/theme';
 import { observer } from '@root/observer';
 import { IChart, IChartData } from '@root/types';
 import { Chart } from 'chart.js';
@@ -60,12 +61,18 @@ export class ChartComponent extends Component<IChartComponent, object> {
               text: 'Value',
               align: 'end',
             },
+            grid: {
+              color: colors.grey1,
+            },
           },
           x: {
             title: {
               display: true,
               text: 'Day',
               align: 'end',
+            },
+            grid: {
+              color: colors.grey1,
             },
           },
         },

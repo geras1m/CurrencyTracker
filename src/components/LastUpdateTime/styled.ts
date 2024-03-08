@@ -10,7 +10,7 @@ export const TimeUpdate = styled.div`
   text-align: center;
   font-weight: ${({ theme }) => theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSizes.px28};
-  color: ${({ theme }) => theme.fontCurrencyTime};
+  color: ${({ theme }) => theme.colors.fontCurrencyTime};
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {
     font-size: ${({ theme }) => theme.fontSizes.px22};

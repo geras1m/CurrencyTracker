@@ -48,7 +48,7 @@ export const BannerText = styled.p`
   max-width: 350px;
   font-size: ${({ theme }) => theme.fontSizes.px25};
   font-weight: ${({ theme }) => theme.fontWeight.light};
-  color: ${({ theme }) => theme.fontNavBar};
+  color: ${({ theme }) => theme.colors.fontNavBar};
   text-align: center;
   line-height: 46px;
 

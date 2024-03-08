@@ -9,7 +9,7 @@ interface IToggleProps {
 export const ToggleWrapper = styled.button`
   width: 50px;
   min-height: 28px;
-  border: 2px solid ${({ theme }) => theme.toggle};
+  border: 2px solid ${({ theme }) => theme.colors.toggle};
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ export const ToggleWrapper = styled.button`
   cursor: pointer;
   outline: none;
   transition: 0.3s ease-out;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.colors.bg};
 
   &:hover {
     box-shadow: 0 0 5px 2px ${({ theme }) => theme.colors.grey2};

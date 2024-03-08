@@ -19,7 +19,7 @@ export const MenuSelectedCurrency = styled.div`
   border-radius: 5px;
   font-size: ${({ theme }) => theme.fontSizes.px28};
   font-weight: ${({ theme }) => theme.fontWeight.medium};
-  color: ${({ theme }) => theme.fontCurrencyTime};
+  color: ${({ theme }) => theme.colors.fontCurrencyTime};
   cursor: pointer;
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {

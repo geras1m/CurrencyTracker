@@ -12,7 +12,7 @@ export const CurrencyCardWrapper = styled.li`
   column-gap: 30px;
   padding: 30px;
   border: 1px solid ${({ theme }) => theme.colors.grey};
-  background-color: ${({ theme }) => theme.bgColorCards};
+  background-color: ${({ theme }) => theme.colors.bgColorCards};
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s ease-out;
@@ -50,7 +50,7 @@ export const CurrencyCardInform = styled.div`
 export const CurrencyCardName = styled.h4`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px32};
-  color: ${({ theme }) => theme.currencyTitle};
+  color: ${({ theme }) => theme.colors.currencyTitle};
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {
     font-size: ${({ theme }) => theme.fontSizes.px20};
@@ -60,7 +60,7 @@ export const CurrencyCardName = styled.h4`
 export const CurrencyCardRate = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSizes.px20};
-  color: ${({ theme }) => theme.currencyText};
+  color: ${({ theme }) => theme.colors.currencyText};
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {
     font-size: ${({ theme }) => theme.fontSizes.px16};

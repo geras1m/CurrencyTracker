@@ -24,7 +24,7 @@ export const NavLinkElem = styled(NavLink)`
   font-weight: ${({ theme }) => theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSizes.px20};
   text-decoration: none;
-  color: ${({ theme }) => theme.fontNavBar};
+  color: ${({ theme }) => theme.colors.fontNavBar};
   transition: 0.2s ease-out;
 
   &:hover {

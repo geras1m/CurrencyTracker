@@ -23,7 +23,7 @@ export const ModalWindow = styled.div`
   height: 350px;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.grey};
-  background-color: ${({ theme }) => theme.bgColorCards};
+  background-color: ${({ theme }) => theme.colors.bgColorCards};
   cursor: auto;
   margin: 0 20px;
 `;
@@ -31,7 +31,7 @@ export const ModalWindow = styled.div`
 export const ModalTitle = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px32};
-  color: ${({ theme }) => theme.currencyTitle};
+  color: ${({ theme }) => theme.colors.currencyTitle};
   margin-bottom: 50px;
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {

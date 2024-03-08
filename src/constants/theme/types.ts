@@ -44,11 +44,7 @@ export interface IFontWeight {
   bold: string;
 }
 
-export interface ITheme {
-  fontSizes: IFontSizes;
-  fontWeight: IFontWeight;
-  gradients: IGradients;
-  colors: IColors;
+interface IThemeColorsExtensions extends IColors {
   bg: string;
   toggle: string;
   fontNavBar: string;
@@ -59,6 +55,13 @@ export interface ITheme {
   currencyTitle: string;
   currencyText: string;
   bgModalMenu: string;
+}
+
+export interface ITheme {
+  fontSizes: IFontSizes;
+  fontWeight: IFontWeight;
+  gradients: IGradients;
+  colors: IThemeColorsExtensions;
 }
 
 export enum ThemeValue {

@@ -15,7 +15,7 @@ export const SearchInputContainer = styled.div`
 
 export const SearchTitle = styled.h2`
   margin-top: 105px;
-  color: ${({ theme }) => theme.fontCurrencyTitle};
+  color: ${({ theme }) => theme.colors.fontCurrencyTitle};
   font-size: ${({ theme }) => theme.fontSizes.px35};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
 

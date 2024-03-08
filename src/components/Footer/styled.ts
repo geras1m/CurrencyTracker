@@ -58,7 +58,7 @@ export const FooterInformText = styled.p`
   margin-top: 35px;
   font-size: ${({ theme }) => theme.fontSizes.px24};
   font-weight: ${({ theme }) => theme.fontWeight.light};
-  color: ${({ theme }) => theme.fontNavBar};
+  color: ${({ theme }) => theme.colors.fontNavBar};
   line-height: 35px;
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {
@@ -78,7 +78,7 @@ export const FooterLinks = styled.div``;
 export const FooterLinksTitle = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px28};
-  color: ${({ theme }) => theme.fontFooterText};
+  color: ${({ theme }) => theme.colors.fontFooterText};
   margin-bottom: 40px;
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {

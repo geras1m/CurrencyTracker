@@ -22,7 +22,7 @@ export const BurgerWrapper = styled.nav<IBurgerMenuProps>`
   div {
     width: 16px;
     height: 4px;
-    background-color: ${({ theme }) => theme.toggle};
+    background-color: ${({ theme }) => theme.colors.toggle};
     border-radius: 10px;
     transition: 0.3s ease;
     position: relative;
