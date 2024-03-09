@@ -27,6 +27,11 @@
     "noFallthroughCasesInSwitch": true,
     "strict": true,
   },
-  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "declare.d.ts"],
-  "exclude": ["node_modules"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "declare.d.ts",  "cypress"],
+  "exclude": ["node_modules", "./cypress.config.ts"],
 }

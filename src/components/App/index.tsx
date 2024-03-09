@@ -15,8 +15,8 @@ const App = () => {
   const lastUsedTheme = (getFromLocalStorage(cachedAppThemeKey) as ThemeType) ?? ThemeValue.dark;
   const [theme, setTheme] = useState<ThemeType>(lastUsedTheme);
 
-  const handleToSwitchTheme = (theme: ThemeType) => {
-    const themeValue = theme === ThemeValue.light ? ThemeValue.dark : ThemeValue.light;
+  const handleToSwitchTheme = (currentTheme: ThemeType) => {
+    const themeValue = currentTheme === ThemeValue.light ? ThemeValue.dark : ThemeValue.light;
     addToLocalStorage(cachedAppThemeKey, themeValue);
     setTheme(themeValue);
   };

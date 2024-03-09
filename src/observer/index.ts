@@ -1,17 +1,17 @@
-type fnType = () => void;
+type FnType = () => void;
 
 class Observable {
-  observers: fnType[];
+  observers: FnType[];
 
   constructor() {
     this.observers = [];
   }
 
-  subscribe(func: fnType) {
+  subscribe(func: FnType) {
     this.observers.push(func);
   }
 
-  unsubscribe(func: fnType) {
+  unsubscribe(func: FnType) {
     this.observers = this.observers.filter((observer) => observer !== func);
   }
 
