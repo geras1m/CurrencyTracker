@@ -6,5 +6,6 @@ webpack.common.js
 webpack.dev.js
 webpack.prod.js
 cypress.config.ts
+jest.config.js
 __mocks__
 __tests__

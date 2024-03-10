@@ -6,6 +6,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -13,6 +14,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
+    "types": ["@testing-library/jest-dom", "jest", "node"],
     "paths": {
       "@root/*": ["src/*"],
       "@components/*": ["src/components/*"],
@@ -32,6 +34,7 @@
       "module": "CommonJS"
     }
   },
-  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "declare.d.ts",  "cypress"],
+  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "declare.d.ts", "cypress"],
   "exclude": ["node_modules", "./cypress.config.ts"],
 }
