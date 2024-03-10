@@ -18,7 +18,7 @@ const CurrencyCard: FC<ICurrencyCardProps> = ({ currencyData, onClick }) => {
   const { code, rate, symbol, symbolBG, name } = currencyData;
 
   return (
-    <CurrencyCardWrapper onClick={() => onClick(code, rate, name)}>
+    <CurrencyCardWrapper data-testid='currency-card' onClick={() => onClick(code, rate, name)}>
       <CurrencyCardIcon color={symbolBG}>{symbol}</CurrencyCardIcon>
       <CurrencyCardInform>
         <CurrencyCardName>{name}</CurrencyCardName>

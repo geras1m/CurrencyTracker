@@ -52,6 +52,7 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
   const currenciesItems = CurrenciesList.filter((currency) => currency !== currentCurrency).map(
     (currency) => (
       <ModalMenuItem
+        data-testid='modal-current-currency-item'
         key={currency}
         onClick={() => {
           handleSetCurrency(currency);
@@ -79,9 +80,15 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
               </>
             )}
           </ModalOutput>
-          <ModalCurrencyInput value={currenciesCount} onChange={handleChangeCount} />
+          <ModalCurrencyInput
+            data-testid='currency-modal-input'
+            value={currenciesCount || ''}
+            onChange={handleChangeCount}
+          />
           <ModalCurrencyMenuWrapper ref={ref}>
-            <ModalSelectedCurrency onClick={handleOpenCurrencyList}>{currentCurrency}</ModalSelectedCurrency>
+            <ModalSelectedCurrency data-testid='modal-current-currency' onClick={handleOpenCurrencyList}>
+              {currentCurrency}
+            </ModalSelectedCurrency>
             <ModalCurrencyMenu open={isOpenCurrencyList}>{currenciesItems}</ModalCurrencyMenu>
           </ModalCurrencyMenuWrapper>
         </>

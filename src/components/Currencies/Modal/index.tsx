@@ -22,8 +22,8 @@ export const Modal: FC<IModalProps> = ({ isOpen, data, closeModal }) => {
   return createPortal(
     <ModalWrapper>
       {data && (
-        <ModalWindow ref={ref}>
-          <ModalTitle>{data.name}</ModalTitle>
+        <ModalWindow data-testid='currency-modal' ref={ref}>
+          <ModalTitle data-testid='currency-title'>{data.name}</ModalTitle>
           <CurrencyModalContent code={data.code} />
           <ModalButton type='button' onClick={closeModal}>
             Close modal
