@@ -52,10 +52,6 @@ export class ChartInput extends Component<IChartInputProps, IChartInputState> {
     const { open, high, low, close, day } = this.state;
     const time = Date.parse(`2024-03-${day}`);
 
-    // TODO: сделать проверку и вывести сообщение
-    // if (high < low) {
-    // } // вывести сообщение какое-нибудь
-
     if (day <= daysCount) this.setState((state) => ({ ...state, day: day + 1 }));
     addDataFromInput({ x: time, o: open, h: high, l: low, c: close });
     if (day === daysCount) this.setState((state) => ({ ...state, day: 1 }));
@@ -78,6 +74,7 @@ export class ChartInput extends Component<IChartInputProps, IChartInputState> {
           {inputConfig.map((value, index) => {
             return (
               <ChatInputField
+                data-testid='timeline-input'
                 type='number'
                 key={value}
                 value={prices[index] || ''}
@@ -88,7 +85,12 @@ export class ChartInput extends Component<IChartInputProps, IChartInputState> {
             );
           })}
 
-          <Button disabled={isDisabled} type='button' onClick={this.addData}>
+          <Button
+            data-testid='timeline-add-data-btn'
+            disabled={isDisabled}
+            type='button'
+            onClick={this.addData}
+          >
             Add input data
           </Button>
         </ChatInputFieldsWrapper>

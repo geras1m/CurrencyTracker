@@ -91,7 +91,7 @@ export class ChartComponent extends Component<IChartComponent, object> {
   render() {
     return (
       <ChartWrapper>
-        <CanvasChart ref={this.chartRef} />
+        <CanvasChart data-testid='timeline-chart' ref={this.chartRef} />
       </ChartWrapper>
     );
   }

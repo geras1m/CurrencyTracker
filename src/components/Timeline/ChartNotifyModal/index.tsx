@@ -62,7 +62,9 @@ export class ChartNotifyModal extends Component<IChartNotifyModalProps, IChartNo
     if (!isOpen) return null;
 
     return createPortal(
-      <ChartMessage>The chart was created successfully for {currentCurrency}!</ChartMessage>,
+      <ChartMessage data-testid='timeline-notify-modal'>
+        The chart was created successfully for {currentCurrency}!
+      </ChartMessage>,
       document.getElementById('modal-root')!,
     );
   }

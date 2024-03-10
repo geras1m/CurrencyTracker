@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+
 describe('Conversion modal', () => {
   beforeEach(() => {
     cy.visit('/');

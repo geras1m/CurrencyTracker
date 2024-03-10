@@ -12,7 +12,11 @@ export class ChartButton extends PureComponent<IChartButton, object> {
     const startDate = Date.parse('2024-03-01');
 
     return (
-      <Button type='button' onClick={() => handleGetRandomData(startDate, dataElementsCount)}>
+      <Button
+        data-testid='timeline-random-chart-btn'
+        type='button'
+        onClick={() => handleGetRandomData(startDate, dataElementsCount)}
+      >
         Create a random chart
       </Button>
     );
