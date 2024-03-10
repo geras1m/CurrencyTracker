@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <Container>
       <ImageWrapper>
-        <Image404 />
+        <Image404 data-testid='Not-found-image' />
       </ImageWrapper>
     </Container>
   );
