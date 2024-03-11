@@ -62,7 +62,7 @@ export const FooterInformText = styled.p`
   line-height: 35px;
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {
-    font-size: ${({ theme }) => theme.fontSizes.px20};
+    font-size: ${({ theme }) => theme.fontSizes.px16};
   }
 `;
 

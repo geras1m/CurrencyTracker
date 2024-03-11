@@ -21,7 +21,7 @@ export const SearchTitle = styled.h2`
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {
     margin-top: 30px;
-    font-size: ${({ theme }) => theme.fontSizes.px24};
+    font-size: ${({ theme }) => theme.fontSizes.px20};
     text-align: center;
   }
 `;

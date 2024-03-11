@@ -13,7 +13,7 @@ export const TimeUpdate = styled.div`
   color: ${({ theme }) => theme.colors.fontCurrencyTime};
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {
-    font-size: ${({ theme }) => theme.fontSizes.px22};
+    font-size: ${({ theme }) => theme.fontSizes.px20};
     padding: 30px 0;
   }
 `;

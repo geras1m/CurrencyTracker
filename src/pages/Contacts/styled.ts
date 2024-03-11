@@ -11,13 +11,13 @@ export const ContactUsTitle = styled.h2`
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {
     margin-top: 30px;
-    font-size: ${({ theme }) => theme.fontSizes.px24};
+    font-size: ${({ theme }) => theme.fontSizes.px22};
     text-align: center;
   }
 `;
 
 export const ContactUsContent = styled.div`
-  margin-top: 105px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ export const ContactItem = styled.li`
   color: ${({ theme }) => theme.colors.grey2};
 
   @media (max-width: ${mediaSizes.maxWidth450px}) {
-    font-size: ${({ theme }) => theme.fontSizes.px22};
+    font-size: ${({ theme }) => theme.fontSizes.px20};
   }
 `;
 
@@ -61,6 +61,6 @@ export const ContactAddress = styled.p`
   text-align: center;
 
   @media (max-width: ${mediaSizes.maxWidth450px}) {
-    font-size: ${({ theme }) => theme.fontSizes.px22};
+    font-size: ${({ theme }) => theme.fontSizes.px20};
   }
 `;

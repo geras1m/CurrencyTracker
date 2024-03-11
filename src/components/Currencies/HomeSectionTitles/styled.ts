@@ -14,6 +14,6 @@ export const HomeSectionTitlesWrapper = styled.h3`
   }
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {
-    font-size: ${({ theme }) => theme.fontSizes.px28};
+    font-size: ${({ theme }) => theme.fontSizes.px22};
   }
 `;
