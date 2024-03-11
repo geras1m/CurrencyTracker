@@ -40,11 +40,14 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
 
   const handleChangeCount = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    let num = Math.abs(Number.parseFloat(value));
+    const num = Math.abs(Number.parseFloat(value));
 
-    if (Number.isNaN(num)) num = 0;
+    if (Number.isNaN(num)) {
+      setCurrenciesCount(String(''));
+      return;
+    }
 
-    if (num > 10000) return;
+    if (num > 100_000) return;
 
     setCurrenciesCount(String(num));
   };

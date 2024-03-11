@@ -35,6 +35,9 @@
     }
   },
   "types": ["node", "jest", "@testing-library/jest-dom"],
-  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "declare.d.ts", "cypress"],
-  "exclude": ["node_modules", "./cypress.config.ts"],
+  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "declare.d.ts"],
+  "exclude": ["node_modules", "./cypress.config.ts",  "**/*.spec.ts",  "./cypress.config.ts",
+    "node_modules",
+    "cypress",
+    "**/*.cy.ts"],
 }

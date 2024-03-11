@@ -7,5 +7,6 @@ webpack.dev.js
 webpack.prod.js
 cypress.config.ts
 jest.config.js
+cypress
 __mocks__
 __tests__
