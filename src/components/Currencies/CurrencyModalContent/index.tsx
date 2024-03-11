@@ -47,7 +47,7 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
       return;
     }
 
-    if (num > 100_000) return;
+    if (num > 100_001) return;
 
     setCurrenciesCount(String(num));
   };
@@ -66,7 +66,7 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
     ),
   );
 
-  const countCountExchangeRate = () => {
+  const countExchangeRate = () => {
     return (Number(exchangeRate) * Number(currenciesCount)).toFixed(5);
   };
 
@@ -75,11 +75,11 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
       {error && <ModalOutput>Something went wrong :(</ModalOutput>}
       {!error && (
         <>
-          <ModalOutput>
+          <ModalOutput data-testid='modal-output'>
             {isLoading && <Spinner width='23px' border='5px' />}
             {!isLoading && (
               <>
-                {currenciesCount} {currentCurrency} = {countCountExchangeRate()} {code}
+                {currenciesCount} {currentCurrency} = {countExchangeRate()} {code}
               </>
             )}
           </ModalOutput>
