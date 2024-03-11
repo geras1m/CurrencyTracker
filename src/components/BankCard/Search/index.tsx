@@ -34,10 +34,15 @@ export class Search extends Component<ISearchProps, ISearchState> {
   getListFilteredCurrencies = (value: string) => {
     const { handleSetCurrentCurrency } = this.props;
 
+    const setCurrency = (currency: string) => {
+      handleSetCurrentCurrency(currency);
+      this.setState((state) => ({ ...state, inputValue: '' }));
+    };
+
     return CurrenciesList.filter((currency) =>
       currency.toLowerCase().includes(value.trim().toLowerCase()),
     ).map((currency) => (
-      <ElasticSearchItem key={currency} onClick={() => handleSetCurrentCurrency(currency)}>
+      <ElasticSearchItem key={currency} onClick={() => setCurrency(currency)}>
         {currency}
       </ElasticSearchItem>
     ));
