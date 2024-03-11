@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '@constants/theme/theme';
 import { Modal } from '@components/Currencies/Modal';
@@ -33,13 +33,16 @@ jest.mock('axios');
 const mockAxios = axios as jest.Mocked<typeof axios>;
 
 describe('Conversion modal', () => {
+  beforeEach(() => {
+    const rootElement = document.createElement('div');
+    rootElement.id = 'modal-root';
+    document.body.appendChild(rootElement);
+  });
+
   afterAll(() => jest.clearAllMocks());
 
   it('should render the conversion component', async () => {
     const mockFn = jest.fn();
-    const rootElement = document.createElement('div');
-    rootElement.id = 'modal-root';
-    document.body.appendChild(rootElement);
 
     render(
       <ThemeProvider theme={darkTheme}>
@@ -54,10 +57,6 @@ describe('Conversion modal', () => {
 
   it('should correctly show the conversion result', async () => {
     const mockFn = jest.fn();
-
-    const rootElement = document.createElement('div');
-    rootElement.id = 'modal-root';
-    document.body.appendChild(rootElement);
 
     const dataOfDefaultComparedCurrency = mockAxiosData.data.USD;
     const typedValue = '2';

@@ -40,13 +40,18 @@ export class ChartInputsContainer extends Component<IChartInputsContainerProps, 
     const isDisabled = inputsData.length >= this.daysCount;
 
     return (
-      <ChartInputWrapper>
+      <ChartInputWrapper data-testid='chart-input-container'>
         <ChartInput
           isDisabled={isDisabled}
           daysCount={this.daysCount}
           addDataFromInput={this.addDataFromInput}
         />
-        <Button type='button' disabled={!isDisabled} onClick={this.createChart}>
+        <Button
+          data-testid='create-chart-btn'
+          type='button'
+          disabled={!isDisabled}
+          onClick={this.createChart}
+        >
           Create the chart
         </Button>
       </ChartInputWrapper>
