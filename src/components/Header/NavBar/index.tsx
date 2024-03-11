@@ -3,7 +3,7 @@ import { routerNavLinks } from '@constants/router/routerPaths';
 
 const NavBar = () => {
   return (
-    <NavList>
+    <NavList data-testid='navigate-bar'>
       {routerNavLinks.map(({ to, title }) => {
         return (
           <NavLinkElem key={to} to={to}>
