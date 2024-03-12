@@ -12,8 +12,24 @@ export const TimeUpdate = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.px28};
   color: ${({ theme }) => theme.colors.fontCurrencyTime};
 
+  & > svg {
+    margin-right: 15px;
+    position: relative;
+    border-radius: 50%;
+    animation: indicator 2.5s ease-out infinite;
+  }
+
   @media (max-width: ${mediaSizes.maxWidth750px}) {
     font-size: ${({ theme }) => theme.fontSizes.px20};
     padding: 30px 0;
+  }
+
+  @keyframes indicator {
+    0% {
+      box-shadow: ${({ theme }) => theme.colors.green3} 0 0 0;
+    }
+    65% {
+      box-shadow: ${({ theme }) => theme.colors.green3} 0 0 0 7px;
+    }
   }
 `;
