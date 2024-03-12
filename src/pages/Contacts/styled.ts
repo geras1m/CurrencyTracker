@@ -17,10 +17,15 @@ export const ContactUsTitle = styled.h2`
 `;
 
 export const ContactUsContent = styled.div`
+  padding: 100px 0;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    padding: 60px 0;
+  }
 `;
 
 export const ContactList = styled.ul`
