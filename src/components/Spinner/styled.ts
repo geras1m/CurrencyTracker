@@ -7,7 +7,7 @@ interface ISpinnerElementProps {
 
 export const SpinnerElement = styled.div<ISpinnerElementProps>`
   border: ${({ $border, theme }) => `${$border} solid ${theme.colors.green}`};
-  border-top: ${({ $border, theme }) => `${$border} solid ${theme.colors.green}`};
+  border-top: ${({ $border, theme }) => `${$border} solid ${theme.colors.green2}`};
   border-radius: 50%;
   height: ${({ size }) => size};
   width: ${({ size }) => size};
