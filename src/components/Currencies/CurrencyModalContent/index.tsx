@@ -24,16 +24,17 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
 
   const [exchangeRate, isLoading, error] = useExchangeRate(code, currentCurrency);
 
-  const handleSetCurrency = (currency: string) => {
-    setCurrentCurrency(currency);
-  };
-
   const handleOpenCurrencyList = () => {
     setIsOpenCurrencyList(true);
   };
 
   const handleCloseCurrencyList = () => {
     setIsOpenCurrencyList(false);
+  };
+
+  const handleSetCurrency = (currency: string) => {
+    setCurrentCurrency(currency);
+    handleCloseCurrencyList();
   };
 
   const ref = useOutsideClick(handleCloseCurrencyList);
