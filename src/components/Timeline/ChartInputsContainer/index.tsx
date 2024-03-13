@@ -25,9 +25,9 @@ export class ChartInputsContainer extends Component<IChartInputsContainerProps, 
   addDataFromInput = (dayIndex: number, newData: IChartData) => {
     const { inputsData } = this.state;
     const newInputsData = [...inputsData];
+
     newInputsData.splice(dayIndex - 1, 1, newData);
     this.setState((state) => ({ ...state, inputsData: [...newInputsData] }));
-    // this.setState((state) => ({ ...state, inputsData: [...inputsData, newData] }));
   };
 
   createChart = () => {

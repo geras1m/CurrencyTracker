@@ -12,6 +12,7 @@ export const ChatInputDays = styled.p`
 `;
 
 export const ChatInputFieldsWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: end;
   gap: 30px;
@@ -42,4 +43,50 @@ export const ChatInputField = styled.input.attrs({
   @media (max-width: ${mediaSizes.maxWidth850px}) {
     width: 170px;
   }
+`;
+
+export const SwitchDayBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.orange};
+  }
+`;
+
+export const DayControlWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 155px;
+
+  @media (max-width: ${mediaSizes.maxWidth850px}) {
+    margin-bottom: 30px;
+  }
+`;
+
+export const ErrorMessage = styled.p`
+  position: absolute;
+  color: ${({ theme }) => theme.colors.red};
+  top: -25px;
+  right: 240px;
+
+  @media (max-width: ${mediaSizes.maxWidth850px}) {
+    top: 40px;
+    margin-bottom: 30px;
+    right: auto;
+  }
+`;
+
+export const ControlAndNotifyWrapper = styled.div`
+  width: 100%;
+  max-width: 155px;
+  display: flex;
+  justify-content: center;
 `;

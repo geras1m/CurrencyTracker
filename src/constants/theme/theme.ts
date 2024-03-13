@@ -40,6 +40,7 @@ export const colors: IColors = {
   green3: '#00800066',
   brown: '#795548',
   orange: '#ecf45a',
+  red: '#ff0000',
 };
 
 export const gradients: IGradients = {
