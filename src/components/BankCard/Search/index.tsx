@@ -51,11 +51,11 @@ export class Search extends Component<ISearchProps, ISearchState> {
       <SearchContainer>
         <SearchTitle>Search currency in the bank</SearchTitle>
         <SearchInputContainer>
-          <SearchInput value={inputValue} onChange={this.handleOnChange} />
+          <SearchInput data-testid='bank-search' value={inputValue} onChange={this.handleOnChange} />
           <SearchImage />
         </SearchInputContainer>
         {inputValue.trim().length !== 0 ? (
-          <ElasticSearchContainer>
+          <ElasticSearchContainer data-testid='elastic-search'>
             {filteredCurrencies.length === 0 ? (
               <ElasticSearchItem>Not found</ElasticSearchItem>
             ) : (
