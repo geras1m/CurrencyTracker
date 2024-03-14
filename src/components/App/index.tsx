@@ -1,36 +1,18 @@
-import GlobalStyles from '@components/App/styled';
 import { Banner } from '@components/Banner';
 import { Footer } from '@components/Footer';
-import Header from '@components/Header';
-import Main from '@components/Main';
-import { darkTheme, lightTheme } from '@constants/theme/theme';
-import { ITheme, ThemeType, ThemeValue } from '@constants/theme/types';
-import { addToLocalStorage, getFromLocalStorage } from '@utils/localstorage';
-import { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { Header } from '@components/Header';
+import { MainPagesContent } from '@components/Main';
+import { ThemeContext } from '@components/ThemeProvider';
+import { useContext } from 'react';
 
-const cachedAppThemeKey = 'theme';
-
-const App = () => {
-  const lastUsedTheme = (getFromLocalStorage(cachedAppThemeKey) as ThemeType) ?? ThemeValue.dark;
-  const [theme, setTheme] = useState<ThemeType>(lastUsedTheme);
-
-  const handleToSwitchTheme = (currentTheme: ThemeType) => {
-    const themeValue = currentTheme === ThemeValue.light ? ThemeValue.dark : ThemeValue.light;
-    addToLocalStorage(cachedAppThemeKey, themeValue);
-    setTheme(themeValue);
-  };
-
-  const currentTheme: ITheme = theme === ThemeValue.light ? lightTheme : darkTheme;
-
+export const App = () => {
+  const { theme, switchTheme } = useContext(ThemeContext);
   return (
-    <ThemeProvider theme={currentTheme}>
-      <GlobalStyles />
-      <Header theme={theme} switchTheme={handleToSwitchTheme} />
+    <>
+      <Header theme={theme} switchTheme={switchTheme} />
       <Banner />
-      <Main />
+      <MainPagesContent />
       <Footer />
-    </ThemeProvider>
+    </>
   );
 };
-export default App;
