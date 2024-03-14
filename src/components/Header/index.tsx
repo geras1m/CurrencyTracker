@@ -1,18 +1,22 @@
+import LogoIcon from '@assets/Logo.svg';
 import { Container } from '@components/App/styled';
 import { BurgerMenu } from '@components/BurgerMenu';
-import Logo from '@components/Header/Logo';
-import NavBar from '@components/Header/NavBar';
+import { NavBar } from '@components/Header/NavBar';
 import { HeaderContent, HeaderWrapper, ThemeContainer } from '@components/Header/styled';
-import ThemeToggle from '@components/Header/ThemeToggle';
+import { ThemeToggle } from '@components/Header/ThemeToggle';
+import { routerPaths } from '@constants/router/routerPaths';
 import { IThemeProps } from '@root/types';
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-const Header: FC<IThemeProps> = ({ theme, switchTheme }) => {
+export const Header: FC<IThemeProps> = ({ theme, switchTheme }) => {
   return (
     <HeaderWrapper>
       <Container>
         <HeaderContent>
-          <Logo />
+          <Link to={routerPaths.HOME}>
+            <LogoIcon />
+          </Link>
           <ThemeContainer>
             <NavBar />
           </ThemeContainer>
@@ -25,4 +29,3 @@ const Header: FC<IThemeProps> = ({ theme, switchTheme }) => {
     </HeaderWrapper>
   );
 };
-export default Header;

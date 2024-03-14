@@ -1,7 +1,7 @@
 import { NavLinkElem, NavList } from '@components/Header/NavBar/styled';
 import { routerNavLinks } from '@constants/router/routerPaths';
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <NavList data-testid='navigate-bar'>
       {routerNavLinks.map(({ to, title }) => {
@@ -14,5 +14,3 @@ const NavBar = () => {
     </NavList>
   );
 };
-
-export default NavBar;

@@ -4,7 +4,7 @@ import { routesMap } from '@constants/router/routerPaths';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-const Main = () => {
+export const MainPagesContent = () => {
   return (
     <Suspense
       fallback={
@@ -21,5 +21,3 @@ const Main = () => {
     </Suspense>
   );
 };
-
-export default Main;

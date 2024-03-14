@@ -1,21 +1,19 @@
-import FooterInformLogo from '@assets/Logo.svg';
+import { Information } from '@components/Footer/Information';
 import {
+  Content,
+  Copyright,
   FooterContainer,
-  FooterContent,
-  FooterCopyright,
-  FooterInform,
-  FooterInformText,
-  FooterInformTitle,
-  FooterInformWrapper,
   FooterLink,
   FooterLinks,
-  FooterLinksItem,
-  FooterLinksList,
-  FooterLinksTitle,
-  FooterLinksWrapper,
   FooterWrapper,
+  LinksItem,
+  LinksList,
+  LinksTitle,
+  LinksWrapper,
 } from '@components/Footer/styled';
 import { footerData, footerLinks } from '@root/constants';
+
+const linkUrl = 'https://www.modsen-software.com/';
 
 export const Footer = () => {
   const { title, text, copyright } = footerData;
@@ -23,16 +21,18 @@ export const Footer = () => {
   const linksColumnList = footerLinks.map(({ column, links }) => {
     return (
       <FooterLinks key={column}>
-        <FooterLinksTitle>{column}</FooterLinksTitle>
-        <FooterLinksList>
+        <LinksTitle>{column}</LinksTitle>
+        <LinksList>
           {links.map((link) => {
             return (
-              <FooterLinksItem key={link}>
-                <FooterLink>{link}</FooterLink>
-              </FooterLinksItem>
+              <LinksItem key={link}>
+                <FooterLink href={linkUrl} target='_blank'>
+                  {link}
+                </FooterLink>
+              </LinksItem>
             );
           })}
-        </FooterLinksList>
+        </LinksList>
       </FooterLinks>
     );
   });
@@ -40,17 +40,11 @@ export const Footer = () => {
   return (
     <FooterWrapper>
       <FooterContainer>
-        <FooterContent>
-          <FooterInform>
-            <FooterInformWrapper>
-              <FooterInformLogo />
-              <FooterInformTitle>{title}</FooterInformTitle>
-            </FooterInformWrapper>
-            <FooterInformText>{text}</FooterInformText>
-          </FooterInform>
-          <FooterLinksWrapper>{linksColumnList}</FooterLinksWrapper>
-        </FooterContent>
-        <FooterCopyright>{copyright}</FooterCopyright>
+        <Content>
+          <Information title={title} text={text} />
+          <LinksWrapper>{linksColumnList}</LinksWrapper>
+        </Content>
+        <Copyright>{copyright}</Copyright>
       </FooterContainer>
     </FooterWrapper>
   );

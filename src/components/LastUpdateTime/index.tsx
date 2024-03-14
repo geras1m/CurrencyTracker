@@ -1,12 +1,12 @@
 import TimeIndicator from '@assets/Time-indicator.svg';
 import { TimeUpdate } from '@components/LastUpdateTime/styled';
-import { FC } from 'react';
+import { memo } from 'react';
 
 interface ILastUpdateTimeProps {
   time: string | undefined;
 }
 
-export const LastUpdateTime: FC<ILastUpdateTimeProps> = ({ time }) => {
+export const LastUpdateTime = memo(({ time }: ILastUpdateTimeProps) => {
   return (
     time && (
       <TimeUpdate>
@@ -15,4 +15,4 @@ export const LastUpdateTime: FC<ILastUpdateTimeProps> = ({ time }) => {
       </TimeUpdate>
     )
   );
-};
+});

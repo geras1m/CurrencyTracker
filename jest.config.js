@@ -19,7 +19,7 @@ module.exports = {
     '^@utils/(.*)': '<rootDir>src/utils/$1',
     '^@pages/(.*)': '<rootDir>src/pages/$1',
     '^@app-types/(.*)': '<rootDir>src/types/$1',
-    '^@services/(.*)': '<rootDir>src/services/$1',
+    '^@services/(.*)': '<rootDir>src/api/$1',
     '^@hooks/(.*)': '<rootDir>src/hooks/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/__mocks__/setupTests.ts'],

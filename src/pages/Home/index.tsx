@@ -22,10 +22,12 @@ const Home = () => {
     document.body.style.overflow = 'hidden';
   }, []);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
     document.body.style.overflow = 'auto';
-  };
+  }, []);
+
+  const isShowHomeContent = !isLoading && !error && memoData;
 
   return (
     <MainCurrency>
@@ -41,12 +43,12 @@ const Home = () => {
         </Wrapper>
       )}
 
-      {!isLoading && !error && memoData && (
+      {isShowHomeContent && (
         <Container>
           <LastUpdateTime time={time} />
           <HomeSectionTitles title='Quotes' />
           <Currencies dataList={memoData} openModal={handleOpenModal} />
-          <Modal isOpen={isModalOpen} data={modalData} closeModal={handleCloseModal} />
+          {isModalOpen ? <Modal data={modalData} closeModal={handleCloseModal} /> : null}
         </Container>
       )}
     </MainCurrency>

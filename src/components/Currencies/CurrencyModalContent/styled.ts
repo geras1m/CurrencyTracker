@@ -1,3 +1,4 @@
+import { mixinFlex } from '@components/App/styled';
 import styled from 'styled-components';
 
 interface IModalCurrencyMenuProps {
@@ -5,9 +6,7 @@ interface IModalCurrencyMenuProps {
 }
 
 export const ModalSelectedCurrency = styled.p`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
   border-radius: 5px;
   width: 200px;
   cursor: pointer;

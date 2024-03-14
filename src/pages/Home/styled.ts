@@ -1,3 +1,4 @@
+import { mixinFlex } from '@components/App/styled';
 import styled from 'styled-components';
 
 export const MainCurrency = styled.main`
@@ -5,10 +6,8 @@ export const MainCurrency = styled.main`
 `;
 
 export const Wrapper = styled.div`
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const ErrorMessage = styled.p`
