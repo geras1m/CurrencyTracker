@@ -1,5 +1,5 @@
+import { getLatestExchangeRates } from '@root/api/getLatestExchangeRates';
 import { cachedCurrencyTimeKey } from '@root/constants';
-import { getLatestExchangeRates } from '@root/services/getLatestExchangeRates';
 import { ICurrenciesResponse, ICurrenciesResponseData, IGetListCachedCurrencies } from '@root/types';
 import { addToLocalStorage, getFromLocalStorage } from '@utils/localstorage';
 

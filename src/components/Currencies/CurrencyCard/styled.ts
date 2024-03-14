@@ -1,3 +1,4 @@
+import { mixinFlex } from '@components/App/styled';
 import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
@@ -7,8 +8,7 @@ interface ICurrencyCardIconProps {
 
 export const CurrencyCardWrapper = styled.li`
   list-style-type: none;
-  display: flex;
-  align-items: center;
+  ${mixinFlex({ alignItem: 'center' })};
   column-gap: 30px;
   padding: 30px;
   border: 1px solid ${({ theme }) => theme.colors.grey};

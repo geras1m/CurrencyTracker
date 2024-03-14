@@ -1,3 +1,4 @@
+import { mixinFlex } from '@components/App/styled';
 import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
@@ -46,9 +47,7 @@ export const ChatInputField = styled.input.attrs({
 `;
 
 export const SwitchDayBtn = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
@@ -60,9 +59,7 @@ export const SwitchDayBtn = styled.button`
 `;
 
 export const DayControlWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
   width: 100%;
   max-width: 155px;
 

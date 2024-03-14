@@ -1,10 +1,9 @@
+import { mixinFlex } from '@components/App/styled';
 import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
   position: fixed;
   top: 0;
   bottom: 0;

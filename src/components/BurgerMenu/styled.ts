@@ -71,6 +71,5 @@ export const Menu = styled.div<IBurgerMenuProps>`
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {
     display: flex;
-    //height: auto;
   }
 `;

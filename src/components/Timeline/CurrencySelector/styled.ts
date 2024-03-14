@@ -1,3 +1,4 @@
+import { mixinFlex } from '@components/App/styled';
 import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
@@ -12,9 +13,7 @@ export const CurrencyMenuWrapper = styled.div`
 
 export const MenuSelectedCurrency = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
   padding: 5px;
   border-radius: 5px;
   font-size: ${({ theme }) => theme.fontSizes.px28};

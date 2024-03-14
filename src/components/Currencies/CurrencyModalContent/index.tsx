@@ -16,6 +16,8 @@ interface ICurrencySelectorProps {
   code: string;
 }
 
+const maxValue = 100_001;
+
 export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
   const [currentCurrency, setCurrentCurrency] = useState<string>(baseCurrency);
   const [isOpenCurrencyList, setIsOpenCurrencyList] = useState<boolean>(false);
@@ -48,7 +50,7 @@ export const CurrencyModalContent: FC<ICurrencySelectorProps> = ({ code }) => {
       return;
     }
 
-    if (num > 100_001) return;
+    if (num > maxValue) return;
 
     setCurrenciesCount(String(num));
   };

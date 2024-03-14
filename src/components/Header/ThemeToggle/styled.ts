@@ -1,3 +1,4 @@
+import { mixinFlex } from '@components/App/styled';
 import { colors } from '@constants/theme/theme';
 import { ThemeType, ThemeValue } from '@constants/theme/types';
 import styled from 'styled-components';
@@ -11,9 +12,7 @@ export const ToggleWrapper = styled.button`
   min-height: 28px;
   border: 2px solid ${({ theme }) => theme.colors.toggle};
   border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: left;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'left' })};
   position: relative;
   cursor: pointer;
   outline: none;

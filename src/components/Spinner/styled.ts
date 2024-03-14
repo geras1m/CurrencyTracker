@@ -1,3 +1,4 @@
+import { mixinFlex, mixinKeyframesSpinner } from '@components/App/styled';
 import styled from 'styled-components';
 
 interface ISpinnerElementProps {
@@ -13,20 +14,10 @@ export const SpinnerElement = styled.div<ISpinnerElementProps>`
   width: ${({ size }) => size};
   animation: spin 1s linear infinite;
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+  ${mixinKeyframesSpinner}
 `;
 
 export const SpinnerWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
   overflow: hidden;
 `;

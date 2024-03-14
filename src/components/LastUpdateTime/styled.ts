@@ -1,10 +1,9 @@
+import { mixinFlex, mixinKeyframesUpdateTime } from '@components/App/styled';
 import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const TimeUpdate = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
   position: relative;
   padding: 57px 0;
   text-align: center;
@@ -24,12 +23,5 @@ export const TimeUpdate = styled.div`
     padding: 30px 0;
   }
 
-  @keyframes indicator {
-    0% {
-      box-shadow: ${({ theme }) => theme.colors.green3} 0 0 0;
-    }
-    65% {
-      box-shadow: ${({ theme }) => theme.colors.green3} 0 0 0 7px;
-    }
-  }
+  ${mixinKeyframesUpdateTime};
 `;

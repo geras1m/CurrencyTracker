@@ -1,6 +1,6 @@
 import { BurgerWrapper, Menu } from '@components/BurgerMenu/styled';
-import NavBar from '@components/Header/NavBar';
-import ThemeToggle from '@components/Header/ThemeToggle';
+import { NavBar } from '@components/Header/NavBar';
+import { ThemeToggle } from '@components/Header/ThemeToggle';
 import { IThemeProps } from '@root/types';
 import { FC, useEffect, useState } from 'react';
 

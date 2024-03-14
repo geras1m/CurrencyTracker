@@ -43,18 +43,12 @@ export const ContactItem = styled.li`
   }
 `;
 
-export const ContactLinkMail = styled.a.attrs({
-  target: '_blank',
-  href: 'mailto:https://www.modsen-software.com/',
-})`
+export const ContactLinkMail = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.grey2};
 `;
 
-export const ContactLinkPhone = styled.a.attrs({
-  target: '_blank',
-  href: 'callto:+48501157180',
-})`
+export const ContactLinkPhone = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.grey2};
 `;

@@ -70,4 +70,4 @@ export interface IBankData {
   currencies: string[];
 }
 
-export type IChart = Chart<'candlestick', IChartData[], string> | undefined;
+export type IChart = Chart<'candlestick', IChartData[], string | unknown> | undefined;
