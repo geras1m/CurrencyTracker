@@ -1,4 +1,4 @@
-type FnType = () => void;
+type FnType = (value: boolean) => void;
 
 class Observable {
   observers: FnType[];
@@ -16,7 +16,7 @@ class Observable {
   }
 
   notify() {
-    this.observers.forEach((observer) => observer());
+    this.observers.forEach((observer) => observer(true));
   }
 }
 

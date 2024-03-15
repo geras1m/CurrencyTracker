@@ -35,7 +35,9 @@
     }
   },
   "types": ["node", "jest", "@testing-library/jest-dom"],
-  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "declare.d.ts"],
+  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx",
+    "src/types/declaringImageFormats.d.ts"
+  ],
   "exclude": ["node_modules", "./cypress.config.ts",  "**/*.spec.ts",  "./cypress.config.ts",
     "node_modules",
     "cypress",

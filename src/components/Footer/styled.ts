@@ -8,7 +8,7 @@ export const FooterWrapper = styled.footer`
   width: 100%;
 `;
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.section`
   width: 100%;
   max-width: 1220px;
   margin: 0 auto;
@@ -16,7 +16,7 @@ export const FooterContainer = styled.div`
   padding: 0 15px;
 `;
 
-export const FooterContent = styled.div`
+export const Content = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -25,7 +25,7 @@ export const FooterContent = styled.div`
   }
 `;
 
-export const FooterInform = styled.div`
+export const Inform = styled.div`
   max-width: 482px;
   margin-right: 105px;
 
@@ -36,7 +36,7 @@ export const FooterInform = styled.div`
   }
 `;
 
-export const FooterInformTitle = styled.h2`
+export const InformTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes.px26};
   font-weight: ${({ theme }) => theme.fontWeight.semibold};
   background: ${({ theme }) => theme.gradients.text};
@@ -48,13 +48,13 @@ export const FooterInformTitle = styled.h2`
   }
 `;
 
-export const FooterInformWrapper = styled.div`
+export const InformWrapper = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
 `;
 
-export const FooterInformText = styled.p`
+export const InformText = styled.p`
   margin-top: 35px;
   font-size: ${({ theme }) => theme.fontSizes.px24};
   font-weight: ${({ theme }) => theme.fontWeight.light};
@@ -66,7 +66,7 @@ export const FooterInformText = styled.p`
   }
 `;
 
-export const FooterLinksWrapper = styled.div`
+export const LinksWrapper = styled.div`
   display: flex;
   flex: 1 1 auto;
   column-gap: 30px;
@@ -75,7 +75,7 @@ export const FooterLinksWrapper = styled.div`
 
 export const FooterLinks = styled.div``;
 
-export const FooterLinksTitle = styled.h3`
+export const LinksTitle = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: ${({ theme }) => theme.fontSizes.px28};
   color: ${({ theme }) => theme.colors.fontFooterText};
@@ -86,13 +86,13 @@ export const FooterLinksTitle = styled.h3`
   }
 `;
 
-export const FooterLinksList = styled.ul`
+export const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 15px;
 `;
 
-export const FooterLinksItem = styled.li`
+export const LinksItem = styled.li`
   list-style: none;
   font-size: ${({ theme }) => theme.fontSizes.px24};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
@@ -102,10 +102,7 @@ export const FooterLinksItem = styled.li`
   }
 `;
 
-export const FooterLink = styled.a.attrs({
-  href: 'https://www.modsen-software.com/',
-  target: '_blank',
-})`
+export const FooterLink = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.grey2};
   transition: 0.3s ease-out;
@@ -115,7 +112,7 @@ export const FooterLink = styled.a.attrs({
   }
 `;
 
-export const FooterCopyright = styled.div`
+export const Copyright = styled.div`
   margin-top: 54px;
   text-align: center;
   font-weight: ${({ theme }) => theme.fontWeight.normal};

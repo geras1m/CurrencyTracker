@@ -27,7 +27,7 @@ describe('Timeline modal', () => {
 
     render(
       <ThemeProvider theme={darkTheme}>
-        <ChartInput isDisabled={false} addDataFromInput={mockFn} daysCount={30} />
+        <ChartInput userDataBer30Days={[]} isDisabled={false} addDataFromInput={mockFn} daysCount={30} />
       </ThemeProvider>,
     );
     const inputs = screen.getAllByTestId('timeline-input');

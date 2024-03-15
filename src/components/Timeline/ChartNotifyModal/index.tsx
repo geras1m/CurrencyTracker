@@ -1,7 +1,7 @@
+import { Portal } from '@components/Portal';
 import { ChartMessage } from '@components/Timeline/ChartNotifyModal/styled';
 import { observer } from '@root/observer';
 import { Component } from 'react';
-import { createPortal } from 'react-dom';
 
 interface IChartNotifyModalState {
   isOpen: boolean;
@@ -22,7 +22,7 @@ export class ChartNotifyModal extends Component<IChartNotifyModalProps, IChartNo
   }
 
   componentDidMount() {
-    observer.subscribe(this.handleOpenModal);
+    observer.subscribe(this.handleSetOpenModal);
   }
 
   componentDidUpdate(
@@ -39,20 +39,16 @@ export class ChartNotifyModal extends Component<IChartNotifyModalProps, IChartNo
 
   componentWillUnmount() {
     if (this.timer) clearTimeout(this.timer);
-    observer.unsubscribe(this.handleCloseModal);
+    observer.unsubscribe(this.handleSetOpenModal);
   }
 
   timeOut = () => {
     if (this.timer) clearTimeout(this.timer);
-    this.timer = setTimeout(() => this.handleCloseModal(), 4000);
+    this.timer = setTimeout(() => this.handleSetOpenModal(false), 4000);
   };
 
-  handleOpenModal = () => {
-    this.setState({ isOpen: true });
-  };
-
-  handleCloseModal = () => {
-    this.setState({ isOpen: false });
+  handleSetOpenModal = (value: boolean) => {
+    this.setState({ isOpen: value });
   };
 
   render() {
@@ -61,11 +57,12 @@ export class ChartNotifyModal extends Component<IChartNotifyModalProps, IChartNo
 
     if (!isOpen) return null;
 
-    return createPortal(
-      <ChartMessage data-testid='timeline-notify-modal'>
-        The chart was created successfully for {currentCurrency}!
-      </ChartMessage>,
-      document.getElementById('modal-root')!,
+    return (
+      <Portal>
+        <ChartMessage data-testid='timeline-notify-modal'>
+          The chart was created successfully for {currentCurrency}!
+        </ChartMessage>
+      </Portal>
     );
   }
 }

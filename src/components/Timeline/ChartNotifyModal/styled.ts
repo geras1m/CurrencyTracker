@@ -1,10 +1,9 @@
+import { mixinFlex } from '@components/App/styled';
 import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const ChartMessage = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
   padding: 15px;
   width: 100%;
   position: fixed;

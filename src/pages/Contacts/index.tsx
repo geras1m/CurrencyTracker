@@ -10,6 +10,11 @@ import {
   MainContactUs,
 } from '@pages/Contacts/styled';
 
+const contactData = {
+  email: 'mailto:https://www.modsen-software.com/',
+  phone: 'callto:+48501157180',
+};
+
 const Contacts = () => {
   return (
     <MainContactUs>
@@ -18,10 +23,10 @@ const Contacts = () => {
           <ContactUsTitle>Contact Us:</ContactUsTitle>
           <ContactList>
             <ContactItem>
-              <ContactLinkMail>contact@modsen-software.com</ContactLinkMail>
+              <ContactLinkMail href={contactData.email}>contact@modsen-software.com</ContactLinkMail>
             </ContactItem>
             <ContactItem>
-              Phone: <ContactLinkPhone>+48501157180</ContactLinkPhone>
+              Phone: <ContactLinkPhone href={contactData.phone}>+48501157180</ContactLinkPhone>
             </ContactItem>
           </ContactList>
           <ContactUsTitle>Based in:</ContactUsTitle>

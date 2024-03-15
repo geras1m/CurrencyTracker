@@ -1,11 +1,10 @@
+import { mixinFlex } from '@components/App/styled';
 import { mediaSizes } from '@constants/theme/theme';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const NavList = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
   column-gap: 112px;
   margin: 0;
 

@@ -17,10 +17,15 @@ export const ContactUsTitle = styled.h2`
 `;
 
 export const ContactUsContent = styled.div`
+  padding: 100px 0;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: ${mediaSizes.maxWidth650px}) {
+    padding: 60px 0;
+  }
 `;
 
 export const ContactList = styled.ul`
@@ -38,18 +43,12 @@ export const ContactItem = styled.li`
   }
 `;
 
-export const ContactLinkMail = styled.a.attrs({
-  target: '_blank',
-  href: 'mailto:https://www.modsen-software.com/',
-})`
+export const ContactLinkMail = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.grey2};
 `;
 
-export const ContactLinkPhone = styled.a.attrs({
-  target: '_blank',
-  href: 'callto:+48501157180',
-})`
+export const ContactLinkPhone = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.grey2};
 `;

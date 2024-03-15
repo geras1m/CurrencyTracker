@@ -1,17 +1,24 @@
+import NextArrow from '@assets/Next-arrow.svg';
+import PrevArrow from '@assets/Prev-arrow.svg';
 import { Button } from '@components/Timeline/ChartButton/styled';
 import {
   ChatInputContainer,
   ChatInputDays,
   ChatInputField,
   ChatInputFieldsWrapper,
+  ControlAndNotifyWrapper,
+  DayControlWrapper,
+  ErrorMessage,
+  SwitchDayBtn,
 } from '@components/Timeline/ChartInput/styled';
 import { IChartData } from '@root/types';
 import { ChangeEvent, Component } from 'react';
 
 interface IChartInputProps {
-  addDataFromInput: (newData: IChartData) => void;
+  addDataFromInput: (dayIndex: number, newData: IChartData) => void;
   daysCount: number;
   isDisabled: boolean;
+  userDataBer30Days: [] | IChartData[];
 }
 
 interface IChartInputState {
@@ -20,6 +27,7 @@ interface IChartInputState {
   high: number;
   low: number;
   close: number;
+  isValidInputData: boolean;
 }
 
 const inputConfig = ['open', 'high', 'low', 'close'];
@@ -35,6 +43,7 @@ export class ChartInput extends Component<IChartInputProps, IChartInputState> {
       high: 0,
       low: 0,
       close: 0,
+      isValidInputData: true,
     };
   }
 
@@ -52,24 +61,69 @@ export class ChartInput extends Component<IChartInputProps, IChartInputState> {
     const { open, high, low, close, day } = this.state;
     const time = Date.parse(`2024-03-${day}`);
 
-    if (day <= daysCount) this.setState((state) => ({ ...state, day: day + 1 }));
-    addDataFromInput({ x: time, o: open, h: high, l: low, c: close });
-    if (day === daysCount) this.setState((state) => ({ ...state, day: 1 }));
-    this.setState((state) => ({ ...state, open: 0, high: 0, low: 0, close: 0 }));
+    if (high < low) {
+      this.setState((state) => ({ ...state, isValidInputData: false }));
+      return;
+    }
+    this.setState((state) => ({ ...state, isValidInputData: true }));
+
+    if (day <= daysCount) {
+      this.setState((state) => ({ ...state, day: day + 1 }));
+    }
+    addDataFromInput(day, { x: time, o: open, h: high, l: low, c: close });
+    if (day === daysCount) {
+      this.setState((state) => ({ ...state, day: 1 }));
+    }
+    const { h, l, o, c } = this.getAddedInputsData(day + 1);
+    this.setState((state) => ({ ...state, open: o, high: h, low: l, close: c }));
+  };
+
+  goToPreviousDay = () => {
+    const { day } = this.state;
+    if (day > 1) {
+      const { h, l, o, c } = this.getAddedInputsData(day - 1);
+      this.setState((state) => ({ ...state, open: o, high: h, low: l, close: c, day: day - 1 }));
+    }
+  };
+
+  getAddedInputsData = (day: number) => {
+    const { userDataBer30Days } = this.props;
+    const userAddedData = userDataBer30Days[day - 1];
+    return userAddedData || { open: 0, high: 0, low: 0, close: 0 };
+  };
+
+  goToNextDay = () => {
+    const { day } = this.state;
+    const { daysCount, userDataBer30Days } = this.props;
+    if (day < daysCount && day <= userDataBer30Days.length) {
+      const { h, l, o, c } = this.getAddedInputsData(day + 1);
+
+      this.setState((state) => ({ ...state, open: o, high: h, low: l, close: c, day: day + 1 }));
+    }
   };
 
   render() {
     const { daysCount, isDisabled: isDataLimit } = this.props;
-    const { day, open, high, low, close } = this.state;
+    const { day, open, high, low, close, isValidInputData } = this.state;
     const isDisabled = day > daysCount || !open || !high || !low || !close || isDataLimit;
     const prices = [open, high, low, close];
 
     return (
       <ChatInputContainer>
         <ChatInputFieldsWrapper>
-          <ChatInputDays>
-            Day: {day} / {daysCount}
-          </ChatInputDays>
+          <DayControlWrapper>
+            <SwitchDayBtn type='button' onClick={this.goToPreviousDay}>
+              <PrevArrow />
+            </SwitchDayBtn>
+            <ChatInputDays>
+              Day: {day} / {daysCount}
+            </ChatInputDays>
+            <SwitchDayBtn type='button' onClick={this.goToNextDay}>
+              <NextArrow />
+            </SwitchDayBtn>
+          </DayControlWrapper>
+
+          {!isValidInputData && <ErrorMessage>The high value cannot be less than the low</ErrorMessage>}
 
           {inputConfig.map((value, index) => {
             return (

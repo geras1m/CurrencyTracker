@@ -46,7 +46,7 @@ describe('Conversion modal', () => {
 
     render(
       <ThemeProvider theme={darkTheme}>
-        <Modal isOpen={true} data={modalData} closeModal={mockFn} />
+        <Modal data={modalData} closeModal={mockFn} />
       </ThemeProvider>,
     );
 
@@ -66,7 +66,7 @@ describe('Conversion modal', () => {
 
     render(
       <ThemeProvider theme={darkTheme}>
-        <Modal isOpen={true} data={modalData} closeModal={mockFn} />
+        <Modal data={modalData} closeModal={mockFn} />
       </ThemeProvider>,
     );
 

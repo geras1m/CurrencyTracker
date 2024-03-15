@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import NavBar from '@components/Header/NavBar';
+import { NavBar } from '@components/Header/NavBar';
 import { darkTheme } from '@constants/theme/theme';
 import { BrowserRouter } from 'react-router-dom';
 

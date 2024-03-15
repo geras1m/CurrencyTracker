@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -26,12 +26,40 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export const Container = styled.div`
-  //width: 100%;
+export const Container = styled.section`
   max-width: 1220px;
   margin: 0 auto;
   box-sizing: content-box;
   padding: 0 15px;
+`;
+
+export const mixinFlex = ({ alignItem = 'start', justifyContent = 'flex-start' }) => css`
+  display: flex;
+  align-items: ${alignItem};
+  justify-content: ${justifyContent};
+`;
+
+export const mixinKeyframesUpdateTime = css`
+  @keyframes indicator {
+    0% {
+      box-shadow: ${({ theme }) => theme.colors.green3} 0 0 0;
+    }
+    65% {
+      box-shadow: ${({ theme }) => theme.colors.green3} 0 0 0 7px;
+    }
+  }
+`;
+
+export const mixinKeyframesSpinner = css`
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export default GlobalStyles;

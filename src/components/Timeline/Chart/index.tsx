@@ -1,8 +1,8 @@
 import 'chart.js/auto';
 import 'chartjs-adapter-luxon';
 
+import { getChartConfig } from '@components/Timeline/Chart/config';
 import { CanvasChart, ChartWrapper } from '@components/Timeline/Chart/styled';
-import { colors } from '@constants/theme/theme';
 import { observer } from '@root/observer';
 import { IChart, IChartData } from '@root/types';
 import { Chart } from 'chart.js';
@@ -41,51 +41,7 @@ export class ChartComponent extends Component<IChartComponent, object> {
   createChart = (data: IChartData[]) => {
     const ctx = this.chartRef.current!.getContext('2d')!;
 
-    this.chart = new Chart(ctx, {
-      type: 'candlestick',
-      data: {
-        datasets: [
-          {
-            data,
-          },
-        ],
-      },
-
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            title: {
-              display: true,
-              text: 'Value',
-              align: 'end',
-            },
-            grid: {
-              color: colors.grey1,
-            },
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'Day',
-              align: 'end',
-            },
-            grid: {
-              color: colors.grey1,
-            },
-          },
-        },
-        plugins: {
-          title: {
-            display: false,
-          },
-          legend: {
-            display: false,
-          },
-        },
-      },
-    });
+    this.chart = getChartConfig(data, ctx);
   };
 
   render() {

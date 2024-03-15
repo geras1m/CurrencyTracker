@@ -1,4 +1,4 @@
-import CurrencyCard from '@components/Currencies/CurrencyCard';
+import { CurrencyCard } from '@components/Currencies/CurrencyCard';
 import { CurrenciesWrapper } from '@components/Currencies/styled';
 import { ICurrencyDataTemplate } from '@root/types';
 import { FC } from 'react';

@@ -22,9 +22,12 @@ export class ChartInputsContainer extends Component<IChartInputsContainerProps, 
     };
   }
 
-  addDataFromInput = (newData: IChartData) => {
+  addDataFromInput = (dayIndex: number, newData: IChartData) => {
     const { inputsData } = this.state;
-    this.setState((state) => ({ ...state, inputsData: [...inputsData, newData] }));
+    const newInputsData = [...inputsData];
+
+    newInputsData.splice(dayIndex - 1, 1, newData);
+    this.setState((state) => ({ ...state, inputsData: [...newInputsData] }));
   };
 
   createChart = () => {
@@ -42,6 +45,7 @@ export class ChartInputsContainer extends Component<IChartInputsContainerProps, 
     return (
       <ChartInputWrapper data-testid='chart-input-container'>
         <ChartInput
+          userDataBer30Days={inputsData}
           isDisabled={isDisabled}
           daysCount={this.daysCount}
           addDataFromInput={this.addDataFromInput}

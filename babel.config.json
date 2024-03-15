@@ -14,5 +14,10 @@
     ],
     ["@babel/preset-react", { "runtime": "automatic" }],
     "@babel/preset-typescript"
-  ]
+  ],
+  "env": {
+    "production": {
+      "plugins": ["babel-plugin-jsx-remove-data-test-id"]
+    }
+  }
 }

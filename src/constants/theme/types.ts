@@ -28,7 +28,9 @@ export interface IColors {
   green: string;
   green1: string;
   green2: string;
+  green3: string;
   orange: string;
+  red: string;
 }
 
 export interface IGradients {

@@ -65,6 +65,6 @@ export class MapBox extends PureComponent<IMapBoxProps, object> {
   };
 
   render() {
-    return <MapContainer ref={this.mapRef} />;
+    return <MapContainer data-testid='bank-map' ref={this.mapRef} />;
   }
 }
