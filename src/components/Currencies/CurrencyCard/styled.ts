@@ -8,7 +8,9 @@ interface ICurrencyCardIconProps {
 
 export const CurrencyCardWrapper = styled.li`
   list-style-type: none;
+
   ${mixinFlex({ alignItem: 'center' })};
+
   column-gap: 30px;
   padding: 30px;
   border: 1px solid ${({ theme }) => theme.colors.grey};

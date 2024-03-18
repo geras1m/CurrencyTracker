@@ -1,4 +1,4 @@
-import { gradients, mediaSizes } from '@constants/theme/theme';
+import { mediaSizes } from '@constants/theme/theme';
 import styled from 'styled-components';
 
 export const CurrenciesWrapper = styled.ul`

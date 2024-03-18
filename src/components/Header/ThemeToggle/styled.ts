@@ -12,7 +12,9 @@ export const ToggleWrapper = styled.button`
   min-height: 28px;
   border: 2px solid ${({ theme }) => theme.colors.toggle};
   border-radius: 14px;
+
   ${mixinFlex({ alignItem: 'center', justifyContent: 'left' })};
+
   position: relative;
   cursor: pointer;
   outline: none;

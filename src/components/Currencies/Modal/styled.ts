@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
+
   position: fixed;
   top: 0;
   bottom: 0;

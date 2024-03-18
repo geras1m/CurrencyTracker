@@ -7,6 +7,7 @@ interface IModalCurrencyMenuProps {
 
 export const ModalSelectedCurrency = styled.p`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
+
   border-radius: 5px;
   width: 200px;
   cursor: pointer;

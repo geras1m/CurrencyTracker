@@ -16,12 +16,10 @@ export const ChatInputFieldsWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: end;
-  gap: 30px;
 
   @media (max-width: ${mediaSizes.maxWidth850px}) {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
     justify-content: space-between;
   }
 `;
@@ -36,18 +34,26 @@ export const ChatInputField = styled.input.attrs({
   background-color: ${({ theme }) => theme.colors.white2};
   padding: 2px 5px;
   font-size: 16px;
+  margin-left: 30px;
 
   &::placeholder {
     font-size: 14px;
   }
 
+  &:nth-last-child(-n + 2) {
+    margin-right: 30px;
+  }
+
   @media (max-width: ${mediaSizes.maxWidth850px}) {
     width: 170px;
+    margin-left: 0;
+    margin-bottom: 15px;
   }
 `;
 
 export const SwitchDayBtn = styled.button`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
+
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
@@ -60,6 +66,7 @@ export const SwitchDayBtn = styled.button`
 
 export const DayControlWrapper = styled.div`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
+
   width: 100%;
   max-width: 155px;
 

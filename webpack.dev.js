@@ -14,5 +14,6 @@ module.exports = merge(common, {
       overlay: true,
     },
   },
+  cache: true,
   plugins: [new BundleAnalyzerPlugin()],
 });

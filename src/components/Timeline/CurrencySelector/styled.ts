@@ -13,7 +13,9 @@ export const CurrencyMenuWrapper = styled.div`
 
 export const MenuSelectedCurrency = styled.div`
   width: 100%;
+
   ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
+
   padding: 5px;
   border-radius: 5px;
   font-size: ${({ theme }) => theme.fontSizes.px28};

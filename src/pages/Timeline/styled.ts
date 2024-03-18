@@ -8,6 +8,7 @@ export const MainTimeline = styled.main`
 
 export const ChartSettingsWrapper = styled.section`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
+
   gap: 20px;
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {

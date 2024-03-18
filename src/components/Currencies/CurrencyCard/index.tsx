@@ -7,7 +7,7 @@ import {
 } from '@components/Currencies/CurrencyCard/styled';
 import { baseCurrency } from '@root/constants';
 import { ICurrencyDataTemplate } from '@root/types';
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 
 interface ICurrencyCardProps {
   currencyData: ICurrencyDataTemplate;
@@ -16,7 +16,7 @@ interface ICurrencyCardProps {
 
 export const CurrencyCard = memo(({ currencyData, onClick }: ICurrencyCardProps) => {
   const { code, rate, symbol, symbolBG, name } = currencyData;
-  const currentRate = rate.toFixed(5);
+  const currentRate = useMemo(() => rate.toFixed(5), [rate]);
 
   return (
     <CurrencyCardWrapper data-testid='currency-card' onClick={() => onClick(code, rate, name)}>

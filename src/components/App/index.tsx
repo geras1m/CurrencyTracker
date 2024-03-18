@@ -1,7 +1,7 @@
 import { Banner } from '@components/Banner';
 import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
-import { MainPagesContent } from '@components/Main';
+import { MainPagesContent } from '@components/MainPagesContent';
 import { ThemeContext } from '@components/ThemeProvider';
 import { useContext } from 'react';
 

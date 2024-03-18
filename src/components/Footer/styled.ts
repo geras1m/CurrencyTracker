@@ -37,6 +37,7 @@ export const Inform = styled.div`
 `;
 
 export const InformTitle = styled.h2`
+  margin-left: 20px;
   font-size: ${({ theme }) => theme.fontSizes.px26};
   font-weight: ${({ theme }) => theme.fontWeight.semibold};
   background: ${({ theme }) => theme.gradients.text};
@@ -50,7 +51,6 @@ export const InformTitle = styled.h2`
 
 export const InformWrapper = styled.div`
   display: flex;
-  gap: 20px;
   align-items: center;
 `;
 
@@ -69,7 +69,6 @@ export const InformText = styled.p`
 export const LinksWrapper = styled.div`
   display: flex;
   flex: 1 1 auto;
-  column-gap: 30px;
   justify-content: space-between;
 `;
 
@@ -89,13 +88,13 @@ export const LinksTitle = styled.h3`
 export const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 15px;
 `;
 
 export const LinksItem = styled.li`
   list-style: none;
   font-size: ${({ theme }) => theme.fontSizes.px24};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
+  margin-bottom: 15px;
 
   @media (max-width: ${mediaSizes.maxWidth650px}) {
     font-size: ${({ theme }) => theme.fontSizes.px20};

@@ -1,4 +1,4 @@
-import { FallbackWrapper } from '@components/Main/styled';
+import { FallbackWrapper } from '@components/MainPagesContent/styled';
 import { Spinner } from '@components/Spinner';
 import { routesMap } from '@constants/router/routerPaths';
 import { Suspense } from 'react';

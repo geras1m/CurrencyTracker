@@ -13,7 +13,9 @@ import {
 } from '@components/Footer/styled';
 import { footerData, footerLinks } from '@root/constants';
 
-const linkUrl = 'https://www.modsen-software.com/';
+const { LINK_FOOTER_URL } = process.env;
+
+const linkUrl = LINK_FOOTER_URL;
 
 export const Footer = () => {
   const { title, text, copyright } = footerData;

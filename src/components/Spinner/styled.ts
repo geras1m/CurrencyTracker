@@ -19,5 +19,6 @@ export const SpinnerElement = styled.div<ISpinnerElementProps>`
 
 export const SpinnerWrapper = styled.div`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
+
   overflow: hidden;
 `;

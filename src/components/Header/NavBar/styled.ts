@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 export const NavList = styled.ul`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'space-between' })};
+
   column-gap: 112px;
   margin: 0;
 
@@ -14,7 +15,6 @@ export const NavList = styled.ul`
 
   @media (max-width: ${mediaSizes.maxWidth750px}) {
     flex-direction: column;
-    row-gap: 20px;
     margin-bottom: 20px;
   }
 `;
@@ -25,6 +25,10 @@ export const NavLinkElem = styled(NavLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.fontNavBar};
   transition: 0.2s ease-out;
+
+  @media (max-width: ${mediaSizes.maxWidth750px}) {
+    margin-bottom: 20px;
+  }
 
   &:hover {
     color: ${({ theme }) => theme.colors.orange};

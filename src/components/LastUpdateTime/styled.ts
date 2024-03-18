@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const TimeUpdate = styled.div`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
+
   position: relative;
   padding: 57px 0;
   text-align: center;

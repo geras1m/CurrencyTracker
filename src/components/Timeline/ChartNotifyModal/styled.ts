@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const ChartMessage = styled.div`
   ${mixinFlex({ alignItem: 'center', justifyContent: 'center' })};
+
   padding: 15px;
   width: 100%;
   position: fixed;
