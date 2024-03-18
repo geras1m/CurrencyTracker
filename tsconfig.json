@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "baseUrl": ".",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "types": ["@testing-library/jest-dom", "jest", "node"],
+    "paths": {
+      "@root/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@app-types/*": ["./src/types/*"],
+      "@services/*": ["./src/services/*"],
+      "@hooks/*": ["./src/hooks/*"]
+    },
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "include": ["**/*.tsx", "src/**/*.ts", "src/**/*.tsx",
+    "src/types/declaringImageFormats.d.ts"
+  ],
+  "exclude": ["node_modules", "./cypress.config.ts",  "**/*.spec.ts",  "./cypress.config.ts",
+    "node_modules",
+    "cypress",
+    "**/*.cy.ts"],
+}
